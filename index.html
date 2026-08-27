@@ -1,0 +1,2025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="theme-color" content="#68132c">
+  <meta
+    name="description"
+    content="A personalized Raksha Bandhan surprise for the most special sister."
+  >
+
+  <title>For My Sister ❤️ | Happy Raksha Bandhan</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Eczar:wght@500;700&family=Kalam:wght@400;700&family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="rakhi.css">
+</head>
+
+<body>
+
+<canvas id="trailCanvas"></canvas>
+<div id="dot"></div>
+<div id="toast"></div>
+
+<!-- Floating controls -->
+<button class="floating-btn" id="soundBtn">🔊</button>
+<button class="floating-btn second" id="themeBtn">🌙</button>
+
+<!-- Navigation -->
+<header class="topbar">
+  <div class="brand">SIS<span>♡</span>TER</div>
+
+  <button id="shareBtn" class="outline-btn">
+    ↗ Share Surprise
+  </button>
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section id="hero">
+
+  <div class="intro">
+
+    <p class="intro-loading show" id="introLoading">
+      ✨ something special is loading
+      <span class="dots">
+        <span>.</span>
+        <span>.</span>
+        <span>.</span>
+      </span>
+    </p>
+
+    <button
+      class="intro-gift"
+      id="introGift"
+      aria-label="Open your Raksha Bandhan surprise"
+    >
+      <span>🎁</span>
+      <small>tap to open your surprise</small>
+    </button>
+
+    <div class="thread-half thread-left" id="threadLeft"></div>
+    <div class="thread-half thread-right" id="threadRight"></div>
+
+    <div class="intro-rakhi" id="introRakhi"></div>
+
+    <div class="intro-wrist" id="introWrist">
+      <div class="wrist-shape"></div>
+    </div>
+
+    <div class="intro-letter" id="introLetter">
+      <p class="letter-text">
+        For my sister — my forever teammate,
+        professional irritator, secret keeper
+        and one of the people I can never replace. ❤️
+      </p>
+    </div>
+
+    <div class="intro-finale" id="introFinale">
+
+      <span class="finale-heart">❤️</span>
+
+      <p class="finale-title">
+        Happy Raksha Bandhan, Sis!
+      </p>
+
+      <p class="finale-hindi">
+        बहन हो तो ऐसी — थोड़ी नटखट, बहुत प्यारी।
+      </p>
+
+    </div>
+
+    <div class="intro-scrollcue" id="introScrollCue">
+      scroll to continue ↓
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= COUNTER ================= -->
+
+<section class="counter-section">
+
+  <div class="counter-card">
+
+    <span class="eyebrow">
+      A little reminder
+    </span>
+
+    <h2>
+      Some things never change.
+    </h2>
+
+    <div class="counter-grid">
+
+      <div>
+        <strong>∞</strong>
+        <span>days of being siblings</span>
+      </div>
+
+      <div>
+        <strong>1</strong>
+        <span>unbreakable bond</span>
+      </div>
+
+      <div>
+        <strong>∞</strong>
+        <span>inside jokes</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= RAKHI ================= -->
+
+<section id="showcase">
+
+  <span class="eyebrow">
+    A thread with a story
+  </span>
+
+  <div class="rakhi-slot" id="showcaseRakhi"></div>
+
+  <h2>
+    Not just a Rakhi.
+  </h2>
+
+  <p class="showcase-caption">
+    It's a tiny reminder that no matter how much we argue,
+    you will always have a brother in your corner.
+  </p>
+
+</section>
+
+
+<!-- ================= DRAG RAKHI ================= -->
+
+<section id="tie">
+
+  <span class="eyebrow">
+    Make it official
+  </span>
+
+  <h2 class="tie-title">
+    Tie the Rakhi
+  </h2>
+
+  <p class="tie-sub">
+    Drag the Rakhi onto the wrist.
+    Your surprise unlocks when you get it right.
+  </p>
+
+  <div class="tie-stage" id="stage">
+
+    <div class="wrist-wrap">
+      <div class="wrist-shape"></div>
+    </div>
+
+    <div class="drop-zone" id="dropZone">
+      <span>place here</span>
+    </div>
+
+    <div
+      id="dragRakhi"
+      role="button"
+      aria-label="Drag Rakhi"
+    ></div>
+
+  </div>
+
+  <p class="hint" id="tieHint">
+    Every Rakhi begins with a little effort.
+  </p>
+
+</section>
+
+
+<!-- ================= PERSONAL CARD ================= -->
+
+<section id="card-section">
+
+  <span class="eyebrow">
+    Made only for her
+  </span>
+
+  <h2 class="card-title">
+    Your Personal Raksha Bandhan Card
+  </h2>
+
+  <p class="card-sub">
+    Put her name below, then open the card.
+  </p>
+
+  <div class="name-input">
+
+    <label for="nameField">
+      My sister's name
+    </label>
+
+    <input
+      type="text"
+      id="nameField"
+      placeholder="Type her name..."
+      maxlength="24"
+      autocomplete="off"
+    >
+
+  </div>
+
+  <div class="card-tools">
+
+    <button class="pill-btn" id="randomMsg">
+      ✨ Give me another message
+    </button>
+
+    <button class="pill-btn" id="saveCard">
+      💾 Save name
+    </button>
+
+  </div>
+
+
+  <div
+    class="flip-card"
+    id="flipCard"
+    tabindex="0"
+    role="button"
+    aria-label="Open your card"
+  >
+
+    <div class="flip-inner">
+
+      <div class="face front">
+
+        <div class="card-ribbon">
+          FOR MY SISTER
+        </div>
+
+        <div class="rakhi-mini" id="cardRakhi"></div>
+
+        <p id="frontGreeting">
+          Happy Raksha Bandhan
+        </p>
+
+        <div class="tap">
+          tap to open ♥
+        </div>
+
+      </div>
+
+
+      <div class="face back">
+
+        <div class="mini-heart">
+          ♥
+        </div>
+
+        <p class="msg" id="cardMsg">
+          Whatever fights we've had,
+          whatever distance comes between us —
+          you are still my sister,
+          my family and someone I'll always stand beside.
+        </p>
+
+        <div class="sign">
+          — from your annoying but loving brother
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= REASONS ================= -->
+
+<section id="reasons">
+
+  <span class="eyebrow">
+    Tap each card
+  </span>
+
+  <h2>
+    Why you're special
+  </h2>
+
+  <div class="reason-grid">
+
+    <button
+      class="reason"
+      data-text="Because you somehow know when something is wrong even when I say 'I'm fine.'"
+    >
+      💗
+      <span>You just know.</span>
+    </button>
+
+    <button
+      class="reason"
+      data-text="Because annoying me seems to be one of your favourite hobbies — and somehow I still love you."
+    >
+      😂
+      <span>Professional irritator.</span>
+    </button>
+
+    <button
+      class="reason"
+      data-text="Because family feels a little more like home when you're around."
+    >
+      🏠
+      <span>You feel like home.</span>
+    </button>
+
+    <button
+      class="reason"
+      data-text="Because I can trust you with the things I don't say to everyone."
+    >
+      🔐
+      <span>My secret keeper.</span>
+    </button>
+
+    <button
+      class="reason"
+      data-text="Because you've seen my worst moods and still haven't returned me to the shop."
+    >
+      😌
+      <span>Still stuck with me.</span>
+    </button>
+
+    <button
+      class="reason"
+      data-text="Because no matter how grown-up we become, you'll always be my little/big sister."
+    >
+      ♾️
+      <span>Forever family.</span>
+    </button>
+
+  </div>
+
+  <div class="reason-output" id="reasonOutput">
+    Tap a card 👆
+  </div>
+
+</section>
+
+
+<!-- ================= MEMORIES ================= -->
+
+<section id="memory">
+
+  <span class="eyebrow">
+    Our little timeline
+  </span>
+
+  <h2>
+    From then to always.
+  </h2>
+
+  <div class="timeline">
+
+    <article>
+      <span>01</span>
+
+      <div>
+        <h3>
+          Childhood chaos
+        </h3>
+
+        <p>
+          Fights over tiny things.
+          Laughter over even tinier things.
+        </p>
+      </div>
+    </article>
+
+
+    <article>
+      <span>02</span>
+
+      <div>
+        <h3>
+          The secret language
+        </h3>
+
+        <p>
+          One look, one expression —
+          somehow we understand.
+        </p>
+      </div>
+    </article>
+
+
+    <article>
+      <span>03</span>
+
+      <div>
+        <h3>
+          Growing up
+        </h3>
+
+        <p>
+          Life changes, but the sibling connection stays.
+        </p>
+      </div>
+    </article>
+
+
+    <article>
+      <span>04</span>
+
+      <div>
+        <h3>
+          Always
+        </h3>
+
+        <p>
+          Different paths, same family,
+          same corner to come back to.
+        </p>
+      </div>
+    </article>
+
+  </div>
+
+</section>
+
+
+<!-- ================= QUIZ ================= -->
+
+<section id="quiz">
+
+  <span class="eyebrow">
+    Sibling test
+  </span>
+
+  <h2>
+    How well do you know your brother? 😏
+  </h2>
+
+  <p class="quiz-sub">
+    Pick an answer. No cheating.
+  </p>
+
+  <div class="quiz-card">
+
+    <p class="question" id="question"></p>
+
+    <div class="answers" id="answers"></div>
+
+    <div class="quiz-result" id="quizResult"></div>
+
+    <button
+      class="pill-btn hidden"
+      id="nextQuestion"
+    >
+      Next →
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- ================= SECRET ================= -->
+
+<section id="secret">
+
+  <div class="secret-card">
+
+    <span class="eyebrow">
+      One last thing
+    </span>
+
+    <h2>
+      There is a secret message.
+    </h2>
+
+    <p>
+      It only appears when you press the button.
+    </p>
+
+    <button
+      class="gold-btn"
+      id="secretBtn"
+    >
+      🔐 Unlock my message
+    </button>
+
+    <div
+      class="secret-message"
+      id="secretMessage"
+    >
+
+      <span>❤️</span>
+
+      <p>
+        No matter where life takes us,
+        I hope you always remember this:
+        you never have to face everything alone.
+        If the world gets loud, call me.
+        If things go wrong, call me.
+        If things go right, call me too.
+        And yes — I will still annoy you.
+      </p>
+
+      <strong>
+        Happy Raksha Bandhan, sister.
+      </strong>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= FINALE ================= -->
+
+<section id="finale">
+
+  <div id="giftLayer"></div>
+
+  <div class="finale-content">
+
+    <div
+      class="finale-rakhi"
+      id="finaleRakhi"
+    ></div>
+
+    <p
+      class="finale-text"
+      id="finaleText"
+    >
+      Happy Raksha Bandhan, Sister ❤️
+    </p>
+
+    <p class="finale-sub">
+      may this bond outlast every argument
+    </p>
+
+    <div class="final-actions">
+
+      <button
+        class="gold-btn"
+        id="confettiBtn"
+      >
+        🎉 Celebrate
+      </button>
+
+      <button
+        class="outline-btn light"
+        id="topBtn"
+      >
+        ↑ Back to top
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<footer>
+  made with love, memories & sibling chaos · 2026
+</footer>
+
+
+<script>
+
+/* =========================================
+   HELPERS
+========================================= */
+
+const $ = id => document.getElementById(id);
+
+
+/* =========================================
+   CURSOR TRAIL
+========================================= */
+
+const canvas = $("trailCanvas");
+const ctx = canvas.getContext("2d");
+const dot = $("dot");
+
+let W;
+let H;
+let points = [];
+
+function resize() {
+
+  W = canvas.width = innerWidth * devicePixelRatio;
+  H = canvas.height = innerHeight * devicePixelRatio;
+
+  canvas.style.width = innerWidth + "px";
+  canvas.style.height = innerHeight + "px";
+
+  ctx.setTransform(
+    devicePixelRatio,
+    0,
+    0,
+    devicePixelRatio,
+    0,
+    0
+  );
+
+  W = innerWidth;
+  H = innerHeight;
+}
+
+resize();
+
+addEventListener("resize", resize);
+
+
+if (matchMedia("(hover:hover)").matches) {
+
+  addEventListener("mousemove", e => {
+
+    dot.style.left = e.clientX + "px";
+    dot.style.top = e.clientY + "px";
+
+    points.push({
+      x: e.clientX,
+      y: e.clientY,
+      a: 1
+    });
+
+    if (points.length > 30) {
+      points.shift();
+    }
+
+  });
+
+}
+
+
+(function trail() {
+
+  ctx.clearRect(0, 0, W, H);
+
+  if (points.length > 1) {
+
+    ctx.beginPath();
+
+    ctx.moveTo(
+      points[0].x,
+      points[0].y
+    );
+
+    points.slice(1).forEach(p => {
+      ctx.lineTo(p.x, p.y);
+    });
+
+    ctx.strokeStyle =
+      "rgba(212,170,65,.45)";
+
+    ctx.lineWidth = 2;
+
+    ctx.stroke();
+  }
+
+  points.forEach(p => {
+    p.a -= .035;
+  });
+
+  points = points.filter(
+    p => p.a > 0
+  );
+
+  requestAnimationFrame(trail);
+
+})();
+
+
+/* =========================================
+   PARTICLES
+========================================= */
+
+function burst(
+  x,
+  y,
+  count = 28,
+  emojis = [
+    "🌸",
+    "✨",
+    "💛",
+    "❤️",
+    "🌼"
+  ]
+) {
+
+  for (
+    let i = 0;
+    i < count;
+    i++
+  ) {
+
+    const e =
+      document.createElement("div");
+
+    const a =
+      Math.random() *
+      Math.PI *
+      2;
+
+    const d =
+      60 +
+      Math.random() *
+      190;
+
+    e.textContent =
+      emojis[
+        i % emojis.length
+      ];
+
+    e.className =
+      "burst";
+
+    e.style.left =
+      x + "px";
+
+    e.style.top =
+      y + "px";
+
+    e.style.fontSize =
+      16 +
+      Math.random() * 16 +
+      "px";
+
+    document.body.appendChild(e);
+
+    requestAnimationFrame(() => {
+
+      e.style.transform =
+        `translate(
+          ${Math.cos(a) * d}px,
+          ${Math.sin(a) * d + 80}px
+        )
+        rotate(
+          ${Math.random() * 360}deg
+        )`;
+
+      e.style.opacity = 0;
+
+    });
+
+    setTimeout(
+      () => e.remove(),
+      1300
+    );
+
+  }
+
+}
+
+
+/* =========================================
+   TOAST
+========================================= */
+
+function toast(message) {
+
+  $("toast").textContent =
+    message;
+
+  $("toast").classList.add(
+    "show"
+  );
+
+  clearTimeout(window.toastTimer);
+
+  window.toastTimer =
+    setTimeout(
+      () =>
+        $("toast").classList.remove(
+          "show"
+        ),
+      2200
+    );
+
+}
+
+
+/* =========================================
+   RAKHI SVG
+========================================= */
+
+function rakhiSVG() {
+
+  let petals = "";
+  let beads = "";
+
+  for (
+    let i = 0;
+    i < 8;
+    i++
+  ) {
+
+    const angle =
+      i * 45;
+
+    petals += `
+      <path
+        transform="rotate(${angle} 100 100)"
+        d="
+          M100 100
+          Q114 67 100 38
+          Q86 67 100 100Z
+        "
+        fill="${
+          i % 2
+            ? "#d5ad45"
+            : "#8c1838"
+        }"
+        stroke="#5b0d22"
+        stroke-width="1.2"
+      />
+    `;
+  }
+
+
+  for (
+    let i = 0;
+    i < 28;
+    i++
+  ) {
+
+    const angle =
+      i *
+      Math.PI *
+      2 /
+      28;
+
+    const cx =
+      100 +
+      Math.cos(angle) * 59;
+
+    const cy =
+      100 +
+      Math.sin(angle) * 59;
+
+    beads += `
+      <circle
+        cx="${cx}"
+        cy="${cy}"
+        r="2.7"
+        fill="#f0cf69"
+      />
+    `;
+  }
+
+
+  return `
+    <svg
+      viewBox="0 0 200 240"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+
+      <line
+        x1="100"
+        y1="0"
+        x2="100"
+        y2="40"
+        stroke="#d5ad45"
+        stroke-width="3"
+      />
+
+      <g>
+        ${petals}
+      </g>
+
+      <circle
+        cx="100"
+        cy="100"
+        r="34"
+        fill="#64102a"
+        stroke="#e4bf58"
+        stroke-width="2"
+      />
+
+      <circle
+        cx="100"
+        cy="100"
+        r="20"
+        fill="#fff7e8"
+        stroke="#d5ad45"
+        stroke-width="1.5"
+      />
+
+      <circle
+        cx="100"
+        cy="100"
+        r="9"
+        fill="#d5ad45"
+      />
+
+      <g>
+        ${beads}
+      </g>
+
+      <path
+        d="M82 155
+           Q68 190 48 208
+           M118 155
+           Q132 190 152 208"
+        stroke="#d5ad45"
+        stroke-width="3"
+        fill="none"
+        stroke-linecap="round"
+      />
+
+      <circle
+        cx="47"
+        cy="209"
+        r="4"
+        fill="#8c1838"
+      />
+
+      <circle
+        cx="153"
+        cy="209"
+        r="4"
+        fill="#d5ad45"
+      />
+
+    </svg>
+  `;
+
+}
+
+
+[
+  "showcaseRakhi",
+  "dragRakhi",
+  "cardRakhi",
+  "introRakhi",
+  "finaleRakhi"
+].forEach(id => {
+
+  $(id).innerHTML =
+    rakhiSVG();
+
+});
+
+
+/* =========================================
+   INTRO ANIMATION
+========================================= */
+
+function openIntro() {
+
+  $("introGift").disabled =
+    true;
+
+  const rect =
+    $("introGift").getBoundingClientRect();
+
+  burst(
+    rect.left +
+    rect.width / 2,
+
+    rect.top +
+    rect.height / 2,
+
+    24
+  );
+
+  $("introGift")
+    .classList.remove("show");
+
+
+  setTimeout(
+    () =>
+      $("threadLeft")
+        .classList.add("show"),
+    350
+  );
+
+
+  setTimeout(
+    () =>
+      $("threadRight")
+        .classList.add("show"),
+    350
+  );
+
+
+  setTimeout(
+    () =>
+      $("introRakhi")
+        .classList.add("show"),
+    900
+  );
+
+
+  setTimeout(
+    () =>
+      $("introWrist")
+        .classList.add("show"),
+    1700
+  );
+
+
+  setTimeout(
+    () =>
+      $("introRakhi")
+        .classList.add("settled"),
+    1800
+  );
+
+
+  setTimeout(
+    () =>
+      $("introLetter")
+        .classList.add("show"),
+    2450
+  );
+
+
+  setTimeout(() => {
+
+    $("introLetter")
+      .classList.remove("show");
+
+    $("introWrist")
+      .classList.remove("show");
+
+    $("introRakhi")
+      .classList.remove("show");
+
+    $("introFinale")
+      .classList.add("show");
+
+    burst(
+      innerWidth / 2,
+      innerHeight / 2,
+      30
+    );
+
+  }, 3900);
+
+
+  setTimeout(
+    () =>
+      $("introScrollCue")
+        .classList.add("show"),
+    4700
+  );
+
+}
+
+
+setTimeout(() => {
+
+  $("introLoading")
+    .classList.remove("show");
+
+  setTimeout(
+    () =>
+      $("introGift")
+        .classList.add("show"),
+    300
+  );
+
+}, 1300);
+
+
+$("introGift")
+  .addEventListener(
+    "click",
+    openIntro
+  );
+
+
+/* =========================================
+   DRAG RAKHI
+========================================= */
+
+let dragging = false;
+let tied = false;
+let ox = 0;
+let oy = 0;
+
+
+function initDrag() {
+
+  const stage =
+    $("stage").getBoundingClientRect();
+
+  $("dragRakhi").style.left =
+    stage.width / 2 - 55 + "px";
+
+  $("dragRakhi").style.top =
+    "20px";
+
+  $("dropZone").style.left =
+    stage.width / 2 - 70 + "px";
+
+  $("dropZone").style.top =
+    stage.height / 2 - 70 + "px";
+
+}
+
+
+addEventListener(
+  "load",
+  initDrag
+);
+
+addEventListener(
+  "resize",
+  initDrag
+);
+
+
+$("dragRakhi")
+  .addEventListener(
+    "pointerdown",
+    e => {
+
+      if (tied) return;
+
+      dragging = true;
+
+      $("dragRakhi")
+        .setPointerCapture(
+          e.pointerId
+        );
+
+      const rect =
+        $("dragRakhi")
+          .getBoundingClientRect();
+
+      ox =
+        e.clientX -
+        rect.left;
+
+      oy =
+        e.clientY -
+        rect.top;
+
+      $("dragRakhi")
+        .classList.add(
+          "dragging"
+        );
+
+    }
+  );
+
+
+$("dragRakhi")
+  .addEventListener(
+    "pointermove",
+    e => {
+
+      if (!dragging) return;
+
+      const stage =
+        $("stage")
+          .getBoundingClientRect();
+
+      $("dragRakhi").style.left =
+        e.clientX -
+        stage.left -
+        ox +
+        "px";
+
+      $("dragRakhi").style.top =
+        e.clientY -
+        stage.top -
+        oy +
+        "px";
+
+    }
+  );
+
+
+$("dragRakhi")
+  .addEventListener(
+    "pointerup",
+    () => {
+
+      if (!dragging) return;
+
+      dragging = false;
+
+      $("dragRakhi")
+        .classList.remove(
+          "dragging"
+        );
+
+      const a =
+        $("dragRakhi")
+          .getBoundingClientRect();
+
+      const b =
+        $("dropZone")
+          .getBoundingClientRect();
+
+      const distance =
+        Math.hypot(
+          a.left +
+          a.width / 2 -
+          (b.left +
+           b.width / 2),
+
+          a.top +
+          a.height / 2 -
+          (b.top +
+           b.height / 2)
+        );
+
+
+      if (
+        distance < 85 &&
+        !tied
+      ) {
+
+        tied = true;
+
+        $("dragRakhi")
+          .classList.add(
+            "tied"
+          );
+
+        $("dropZone")
+          .classList.add(
+            "hidden"
+          );
+
+        $("tieHint").textContent =
+          "Tied! The sister bond is officially activated. ❤️";
+
+        $("tieHint")
+          .classList.add(
+            "done"
+          );
+
+        burst(
+          innerWidth / 2,
+          innerHeight / 2
+        );
+
+        setTimeout(
+          () =>
+            $("card-section")
+              .scrollIntoView({
+                behavior:
+                  "smooth"
+              }),
+          800
+        );
+
+      }
+
+    }
+  );
+
+
+/* =========================================
+   PERSONAL CARD
+========================================= */
+
+const messages = [
+
+  "Whatever fights we have, you are still my sister, my family and someone I will always stand beside.",
+
+  "You annoy me more than almost anyone — which is exactly why life would feel strange without you.",
+
+  "No matter how much we grow up, some part of me will always be the brother who has your back.",
+
+  "If you ever doubt how loved you are, come back to this page. I meant every word."
+
+];
+
+
+let msgIndex = 0;
+
+
+const saved =
+  localStorage.getItem(
+    "rakhiSisterName"
+  );
+
+
+if (saved) {
+
+  $("nameField").value =
+    saved;
+
+  $("frontGreeting")
+    .textContent =
+      "Happy Raksha Bandhan, " +
+      saved +
+      " ❤️";
+
+}
+
+
+$("nameField")
+  .addEventListener(
+    "input",
+    e => {
+
+      const name =
+        e.target.value.trim();
+
+      $("frontGreeting")
+        .textContent =
+          name
+            ? `Happy Raksha Bandhan, ${name} ❤️`
+            : "Happy Raksha Bandhan";
+
+    }
+  );
+
+
+$("saveCard")
+  .onclick = () => {
+
+    localStorage.setItem(
+      "rakhiSisterName",
+      $("nameField")
+        .value
+        .trim()
+    );
+
+    toast(
+      "Name saved on this device 💾"
+    );
+
+  };
+
+
+$("randomMsg")
+  .onclick = () => {
+
+    msgIndex =
+      (msgIndex + 1) %
+      messages.length;
+
+    updateMsg();
+
+  };
+
+
+function updateMsg() {
+
+  const name =
+    $("nameField")
+      .value
+      .trim();
+
+  $("cardMsg")
+    .textContent =
+      (
+        name
+          ? name + ", "
+          : ""
+      ) +
+      messages[msgIndex];
+
+}
+
+
+$("flipCard")
+  .onclick = () => {
+
+    $("flipCard")
+      .classList.toggle(
+        "flipped"
+      );
+
+    updateMsg();
+
+  };
+
+
+$("flipCard")
+  .onkeydown = e => {
+
+    if (
+      e.key === "Enter" ||
+      e.key === " "
+    ) {
+
+      e.preventDefault();
+
+      $("flipCard").click();
+
+    }
+
+  };
+
+
+/* =========================================
+   SPECIAL REASONS
+========================================= */
+
+document
+  .querySelectorAll(".reason")
+  .forEach(button => {
+
+    button.onclick = () => {
+
+      $("reasonOutput")
+        .textContent =
+          button.dataset.text;
+
+      burst(
+        innerWidth / 2,
+        innerHeight / 2,
+        8,
+        [
+          "💗",
+          "✨"
+        ]
+      );
+
+    };
+
+  });
+
+
+/* =========================================
+   QUIZ
+========================================= */
+
+const questions = [
+
+  {
+    q:
+      "Who is more likely to start an argument over something tiny?",
+
+    a:
+      [
+        "Sister 😇",
+        "Brother 😇",
+        "Both 😂"
+      ],
+
+    correct: 2
+  },
+
+
+  {
+    q:
+      "Who usually gets the last word?",
+
+    a:
+      [
+        "Sister",
+        "Brother",
+        "Nobody wins"
+      ],
+
+    correct: 0
+  },
+
+
+  {
+    q:
+      "If your brother says “I didn’t touch it”, what does it probably mean?",
+
+    a:
+      [
+        "He touched it",
+        "He touched it 😂",
+        "Both are lying"
+      ],
+
+    correct: 1
+  }
+
+];
+
+
+let qi = 0;
+let score = 0;
+
+
+function renderQ() {
+
+  const q =
+    questions[qi];
+
+  $("question")
+    .textContent =
+      q.q;
+
+  $("answers")
+    .innerHTML = "";
+
+  $("quizResult")
+    .textContent = "";
+
+  $("nextQuestion")
+    .classList.add(
+      "hidden"
+    );
+
+
+  q.a.forEach(
+    (answer, index) => {
+
+      const button =
+        document.createElement(
+          "button"
+        );
+
+      button.textContent =
+        answer;
+
+      button.onclick =
+        () =>
+          answerQuestion(
+            index
+          );
+
+      $("answers")
+        .appendChild(
+          button
+        );
+
+    }
+  );
+
+}
+
+
+function answerQuestion(index) {
+
+  const q =
+    questions[qi];
+
+  const correct =
+    index === q.correct;
+
+  if (correct) {
+    score++;
+  }
+
+
+  $("quizResult")
+    .textContent =
+      correct
+        ? "Correct! You know the chaos. 😎"
+        : "Wrong! The sibling court has ruled against you. 😂";
+
+
+  $("answers")
+    .querySelectorAll("button")
+    .forEach(
+      button =>
+        button.disabled = true
+    );
+
+
+  $("nextQuestion")
+    .classList.remove(
+      "hidden"
+    );
+
+
+  if (
+    qi ===
+    questions.length - 1
+  ) {
+
+    $("nextQuestion")
+      .textContent =
+        "See my result →";
+
+  }
+
+}
+
+
+$("nextQuestion")
+  .onclick = () => {
+
+    if (
+      qi <
+      questions.length - 1
+    ) {
+
+      qi++;
+
+      renderQ();
+
+    }
+
+    else {
+
+      $("question")
+        .textContent =
+          `You scored ${score}/${questions.length} ❤️`;
+
+      $("answers")
+        .innerHTML = "";
+
+      $("quizResult")
+        .textContent =
+          score === questions.length
+            ? "Perfect. Certified sibling expert."
+            : "Good enough. You're still family. 😂";
+
+      $("nextQuestion")
+        .classList.add(
+          "hidden"
+        );
+
+    }
+
+  };
+
+
+renderQ();
+
+
+/* =========================================
+   SECRET MESSAGE
+========================================= */
+
+$("secretBtn")
+  .onclick = () => {
+
+    $("secretMessage")
+      .classList.add(
+        "show"
+      );
+
+    $("secretBtn")
+      .textContent =
+        "❤️ Message unlocked";
+
+    burst(
+      innerWidth / 2,
+      innerHeight / 2,
+      35,
+      [
+        "❤️",
+        "✨",
+        "🌸"
+      ]
+    );
+
+  };
+
+
+/* =========================================
+   FINALE FLOATING GIFTS
+========================================= */
+
+const gifts = [
+  "🎁",
+  "🌸",
+  "✨",
+  "🪔",
+  "💛",
+  "❤️"
+];
+
+
+for (
+  let i = 0;
+  i < 18;
+  i++
+) {
+
+  const gift =
+    document.createElement(
+      "div"
+    );
+
+  gift.className =
+    "gift";
+
+  gift.textContent =
+    gifts[
+      i % gifts.length
+    ];
+
+  gift.style.left =
+    Math.random() * 95 +
+    "%";
+
+  gift.style.setProperty(
+    "--drift",
+    Math.random() * 90 -
+    45 +
+    "px"
+  );
+
+  gift.style.animationDuration =
+    7 +
+    Math.random() * 7 +
+    "s";
+
+  gift.style.animationDelay =
+    Math.random() * 8 +
+    "s";
+
+  $("giftLayer")
+    .appendChild(
+      gift
+    );
+
+}
+
+
+/* =========================================
+   CELEBRATE
+========================================= */
+
+$("confettiBtn")
+  .onclick = () => {
+
+    burst(
+      innerWidth / 2,
+      innerHeight / 2,
+      65,
+      [
+        "🎉",
+        "❤️",
+        "✨",
+        "🌸",
+        "💛",
+        "🎁"
+      ]
+    );
+
+  };
+
+
+/* =========================================
+   TOP
+========================================= */
+
+$("topBtn")
+  .onclick = () => {
+
+    scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+
+  };
+
+
+/* =========================================
+   SHARE
+========================================= */
+
+$("shareBtn")
+  .onclick = async () => {
+
+    const name =
+      $("nameField")
+        .value
+        .trim();
+
+    const url =
+      new URL(
+        location.href
+      );
+
+    if (name) {
+
+      url.searchParams.set(
+        "sister",
+        name
+      );
+
+    }
+
+
+    const text =
+      `A Raksha Bandhan surprise for ${
+        name ||
+        "my sister"
+      } ❤️`;
+
+
+    try {
+
+      if (
+        navigator.share
+      ) {
+
+        await navigator.share({
+          title:
+            "For My Sister ❤️",
+
+          text,
+
+          url:
+            url.href
+        });
+
+      }
+
+      else {
+
+        await navigator
+          .clipboard
+          .writeText(
+            url.href
+          );
+
+        toast(
+          "Surprise link copied! 🔗"
+        );
+
+      }
+
+    }
+
+    catch (error) {}
+
+  };
+
+
+/* =========================================
+   URL PERSONALIZATION
+========================================= */
+
+const params =
+  new URLSearchParams(
+    location.search
+  );
+
+
+if (
+  params.get("sister")
+) {
+
+  const sister =
+    params.get("sister");
+
+  $("nameField")
+    .value =
+      sister;
+
+  $("frontGreeting")
+    .textContent =
+      "Happy Raksha Bandhan, " +
+      sister +
+      " ❤️";
+
+}
+
+
+/* =========================================
+   DARK MODE
+========================================= */
+
+$("themeBtn")
+  .onclick = () => {
+
+    document.body
+      .classList.toggle(
+        "dark"
+      );
+
+    $("themeBtn")
+      .textContent =
+        document.body
+          .classList.contains(
+            "dark"
+          )
+          ? "☀️"
+          : "🌙";
+
+  };
+
+
+/* =========================================
+   SOUND MODE
+========================================= */
+
+let audioCtx;
+let playing = false;
+
+
+$("soundBtn")
+  .onclick = () => {
+
+    try {
+
+      if (!audioCtx) {
+
+        audioCtx =
+          new (
+            window.AudioContext ||
+            window.webkitAudioContext
+          )();
+
+      }
+
+
+      if (playing) {
+
+        audioCtx.suspend();
+
+        playing = false;
+
+        $("soundBtn")
+          .textContent =
+            "🔇";
+
+        return;
+
+      }
+
+
+      audioCtx.resume();
+
+      playing = true;
+
+      $("soundBtn")
+        .textContent =
+          "🔊";
+
+      toast(
+        "Celebration mode on ✨"
+      );
+
+    }
+
+    catch (error) {
+
+      toast(
+        "Sound is not available in this browser"
+      );
+
+    }
+
+  };
+
+
+/* =========================================
+   SCROLL REVEAL
+========================================= */
+
+const observer =
+  new IntersectionObserver(
+    entries => {
+
+      entries.forEach(
+        entry => {
+
+          if (
+            entry.isIntersecting
+          ) {
+
+            entry.target
+              .classList.add(
+                "visible"
+              );
+
+          }
+
+        }
+      );
+
+    },
+    {
+      threshold: 0.12
+    }
+  );
+
+
+document
+  .querySelectorAll(
+    "section:not(#hero), .timeline article, .reason, .counter-card"
+  )
+  .forEach(
+    element =>
+      observer.observe(
+        element
+      )
+  );
+
+</script>
+
+</body>
+</html>
