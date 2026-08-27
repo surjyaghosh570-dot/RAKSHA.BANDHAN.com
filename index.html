@@ -1,141 +1,1243 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#64152d">
+<meta name="description" content="A special Raksha Bandhan surprise made with love for my sister.">
+<title>For My Sister ❤️ | Raksha Bandhan</title>
 
-  <meta name="theme-color" content="#68132c">
-  <meta
-    name="description"
-    content="A personalized Raksha Bandhan surprise for the most special sister."
-  >
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Kalam:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap');
 
-  <title>For My Sister ❤️ | Happy Raksha Bandhan</title>
+:root{
+  --red:#64152d;
+  --red2:#8d2445;
+  --red3:#3b0c1d;
+  --gold:#d7af4b;
+  --gold2:#f4d77c;
+  --cream:#fff8ea;
+  --paper:#fffdf7;
+  --pink:#f9dfe7;
+  --brown:#301b18;
+  --shadow:0 25px 80px rgba(47,9,25,.22);
+}
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Eczar:wght@500;700&family=Kalam:wght@400;700&family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap"
-    rel="stylesheet"
-  >
+html{
+  scroll-behavior:smooth;
+}
 
-  <link rel="stylesheet" href="rakhi.css">
+body{
+  background:var(--cream);
+  color:var(--brown);
+  font-family:Poppins,sans-serif;
+  overflow-x:hidden;
+}
+
+button,input{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+a{
+  color:inherit;
+}
+
+#particles{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:1000;
+}
+
+.cursor{
+  position:fixed;
+  width:12px;
+  height:12px;
+  border-radius:50%;
+  background:var(--gold2);
+  box-shadow:0 0 25px var(--gold2);
+  pointer-events:none;
+  z-index:9999;
+  transform:translate(-50%,-50%);
+  mix-blend-mode:screen;
+}
+
+@media(max-width:700px){
+  .cursor{display:none}
+}
+
+
+/* =========================
+   TOP BAR
+========================= */
+
+.nav{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 6vw;
+  background:rgba(70,10,29,.88);
+  backdrop-filter:blur(15px);
+  color:white;
+  z-index:5000;
+  border-bottom:1px solid rgba(244,215,124,.25);
+}
+
+.logo{
+  font-family:"DM Serif Display",serif;
+  font-size:1.25rem;
+  letter-spacing:.14em;
+}
+
+.logo span{
+  color:var(--gold2);
+}
+
+.nav-actions{
+  display:flex;
+  gap:8px;
+}
+
+.nav button{
+  border:1px solid var(--gold);
+  background:transparent;
+  color:var(--gold2);
+  padding:9px 15px;
+  border-radius:30px;
+  transition:.25s;
+}
+
+.nav button:hover{
+  background:var(--gold);
+  color:var(--red3);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  min-height:100svh;
+  background:
+    radial-gradient(circle at 50% 25%,#a83258 0%,var(--red) 42%,var(--red3) 100%);
+  color:white;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  opacity:.12;
+  background-image:
+    radial-gradient(#fff 1px,transparent 1px);
+  background-size:35px 35px;
+}
+
+.hero-center{
+  min-height:100svh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  position:relative;
+  z-index:2;
+  padding:90px 20px 50px;
+  text-align:center;
+}
+
+.pretitle{
+  color:var(--gold2);
+  text-transform:uppercase;
+  letter-spacing:.35em;
+  font-size:.68rem;
+  margin-bottom:20px;
+}
+
+.hero h1{
+  font-family:"DM Serif Display",serif;
+  font-size:clamp(3.1rem,9vw,7.5rem);
+  line-height:.9;
+  font-weight:400;
+}
+
+.hero h1 em{
+  display:block;
+  color:var(--gold2);
+  font-style:italic;
+}
+
+.hero-sub{
+  max-width:650px;
+  margin:28px auto;
+  color:#fff1d4;
+  font-family:Kalam,cursive;
+  font-size:1.25rem;
+  line-height:1.6;
+}
+
+.open-btn{
+  margin-top:20px;
+  border:1px solid var(--gold2);
+  background:linear-gradient(135deg,var(--gold2),var(--gold));
+  color:var(--red3);
+  padding:16px 27px;
+  border-radius:50px;
+  font-weight:700;
+  box-shadow:0 15px 40px rgba(0,0,0,.25);
+  transition:.3s;
+}
+
+.open-btn:hover{
+  transform:translateY(-4px) scale(1.03);
+}
+
+.hero-rakhi{
+  width:180px;
+  height:180px;
+  margin-bottom:25px;
+  animation:floatRakhi 4s ease-in-out infinite;
+  filter:drop-shadow(0 20px 20px rgba(0,0,0,.25));
+}
+
+@keyframes floatRakhi{
+  0%,100%{transform:translateY(0) rotate(-2deg)}
+  50%{transform:translateY(-14px) rotate(2deg)}
+}
+
+.scroll{
+  position:absolute;
+  bottom:28px;
+  color:#f4d77c;
+  font-size:.7rem;
+  letter-spacing:.25em;
+  text-transform:uppercase;
+  animation:bob 1.7s infinite;
+}
+
+@keyframes bob{
+  50%{transform:translateY(7px)}
+}
+
+
+/* =========================
+   COMMON
+========================= */
+
+.section{
+  padding:110px 6vw;
+  position:relative;
+  text-align:center;
+}
+
+.eyebrow{
+  color:#9c6e1a;
+  text-transform:uppercase;
+  letter-spacing:.28em;
+  font-size:.68rem;
+  font-weight:700;
+  margin-bottom:12px;
+}
+
+.section h2{
+  font-family:"DM Serif Display",serif;
+  color:var(--red);
+  font-size:clamp(2.3rem,6vw,4.5rem);
+  font-weight:400;
+  line-height:1;
+  margin-bottom:18px;
+}
+
+.section-desc{
+  max-width:680px;
+  margin:0 auto 45px;
+  line-height:1.8;
+  opacity:.75;
+}
+
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s ease;
+}
+
+.reveal.visible{
+  opacity:1;
+  transform:none;
+}
+
+
+/* =========================
+   INTRO STORY
+========================= */
+
+.story{
+  background:
+    linear-gradient(180deg,#f5dfb4,var(--cream));
+}
+
+.story-box{
+  width:min(1000px,100%);
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0;
+  border-radius:35px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+
+.story-left{
+  background:var(--red);
+  color:white;
+  padding:55px 40px;
+  text-align:left;
+}
+
+.story-left h3{
+  font-family:"DM Serif Display",serif;
+  font-size:2.5rem;
+  font-weight:400;
+  margin-bottom:20px;
+}
+
+.story-left p{
+  font-family:Kalam,cursive;
+  font-size:1.2rem;
+  line-height:1.8;
+  color:#ffeec9;
+}
+
+.story-right{
+  background:var(--paper);
+  padding:45px 35px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.story-stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  width:100%;
+}
+
+.stat{
+  padding:15px;
+  border-right:1px solid #d7af4b55;
+}
+
+.stat:last-child{
+  border:0;
+}
+
+.stat strong{
+  display:block;
+  font-family:"DM Serif Display",serif;
+  font-size:2.7rem;
+  color:var(--red);
+}
+
+.stat span{
+  font-size:.75rem;
+  opacity:.65;
+}
+
+
+/* =========================
+   RAKHI DISPLAY
+========================= */
+
+.rakhi-section{
+  background:var(--cream);
+}
+
+.rakhi-display{
+  width:min(500px,90vw);
+  height:420px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+
+.rakhi-display::before{
+  content:"";
+  position:absolute;
+  width:230px;
+  height:230px;
+  border-radius:50%;
+  background:rgba(215,175,75,.12);
+  filter:blur(15px);
+}
+
+.big-rakhi{
+  width:270px;
+  position:relative;
+  z-index:2;
+  animation:spinSlow 18s linear infinite;
+}
+
+@keyframes spinSlow{
+  from{transform:rotate(0)}
+  to{transform:rotate(360deg)}
+}
+
+.rakhi-note{
+  max-width:620px;
+  margin:10px auto 0;
+  font-family:"DM Serif Display",serif;
+  font-style:italic;
+  color:var(--red2);
+  font-size:1.35rem;
+}
+
+
+/* =========================
+   DRAG GAME
+========================= */
+
+.game{
+  background:
+    radial-gradient(circle at 50% 10%,#ffe9b1,#f4d28c);
+}
+
+.game-board{
+  width:min(850px,100%);
+  height:500px;
+  margin:auto;
+  background:rgba(255,255,255,.55);
+  border:2px solid #fff;
+  border-radius:35px;
+  position:relative;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  touch-action:none;
+}
+
+.game-title{
+  color:var(--red);
+  font-family:"DM Serif Display",serif;
+  font-size:1.5rem;
+  position:absolute;
+  top:30px;
+  left:0;
+  right:0;
+}
+
+.wrist{
+  position:absolute;
+  left:50%;
+  top:52%;
+  transform:translate(-50%,-50%);
+  width:310px;
+  height:125px;
+  border-radius:70% 60% 45% 50%;
+  background:
+    linear-gradient(145deg,#ffe9c6,#e0ae72);
+  box-shadow:
+    inset -15px -15px 30px #c4894e44,
+    inset 12px 12px 20px #fff8;
+  transform-origin:center;
+}
+
+.hand{
+  position:absolute;
+  left:50%;
+  top:37%;
+  transform:translateX(-50%);
+  width:190px;
+  height:80px;
+  background:linear-gradient(145deg,#ffe9c6,#e0ae72);
+  border-radius:50% 50% 20% 20%;
+}
+
+.drop{
+  position:absolute;
+  left:50%;
+  top:52%;
+  transform:translate(-50%,-50%);
+  width:150px;
+  height:150px;
+  border:3px dashed var(--red2);
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  color:var(--red2);
+  font-size:.7rem;
+  text-transform:uppercase;
+  letter-spacing:.18em;
+  transition:.25s;
+}
+
+.drop.active{
+  transform:translate(-50%,-50%) scale(1.1);
+  background:#fff3;
+  border-color:var(--gold);
+}
+
+.draggable{
+  width:125px;
+  position:absolute;
+  left:50%;
+  top:65px;
+  transform:translateX(-50%);
+  z-index:10;
+  cursor:grab;
+  touch-action:none;
+  filter:drop-shadow(0 15px 10px #0003);
+}
+
+.draggable.dragging{
+  cursor:grabbing;
+  transform:scale(1.08);
+}
+
+.game-message{
+  margin-top:22px;
+  color:var(--red);
+  font-family:Kalam,cursive;
+  font-size:1.2rem;
+}
+
+
+/* =========================
+   PERSONAL CARD
+========================= */
+
+.card-section{
+  background:
+    linear-gradient(135deg,var(--red3),var(--red));
+  color:white;
+}
+
+.card-section .eyebrow{
+  color:var(--gold2);
+}
+
+.card-section h2{
+  color:white;
+}
+
+.name-wrap{
+  margin:10px auto 30px;
+}
+
+.name-wrap label{
+  display:block;
+  color:var(--gold2);
+  font-size:.7rem;
+  text-transform:uppercase;
+  letter-spacing:.2em;
+  margin-bottom:8px;
+}
+
+.name-input{
+  width:min(350px,90vw);
+  padding:14px 18px;
+  border-radius:40px;
+  border:1px solid var(--gold);
+  background:#fff1;
+  outline:none;
+  color:white;
+  text-align:center;
+}
+
+.name-input::placeholder{
+  color:#fff9;
+}
+
+.card-actions{
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-bottom:30px;
+}
+
+.small-btn{
+  border:1px solid var(--gold);
+  color:var(--red);
+  background:var(--gold2);
+  padding:10px 17px;
+  border-radius:30px;
+  font-weight:600;
+}
+
+.flip-card{
+  width:min(520px,94vw);
+  height:460px;
+  margin:auto;
+  perspective:1400px;
+}
+
+.flip-inner{
+  width:100%;
+  height:100%;
+  position:relative;
+  transition:transform .9s cubic-bezier(.2,.8,.2,1);
+  transform-style:preserve-3d;
+}
+
+.flip-card.flipped .flip-inner{
+  transform:rotateY(180deg);
+}
+
+.card-face{
+  position:absolute;
+  inset:0;
+  backface-visibility:hidden;
+  border-radius:30px;
+  border:2px solid var(--gold);
+  box-shadow:var(--shadow);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:35px;
+}
+
+.card-front{
+  background:
+    radial-gradient(circle at 30% 20%,#a52c50,var(--red) 65%);
+}
+
+.card-back{
+  background:var(--paper);
+  color:var(--red);
+  transform:rotateY(180deg);
+}
+
+.card-label{
+  position:absolute;
+  top:25px;
+  color:var(--gold2);
+  font-size:.65rem;
+  letter-spacing:.25em;
+}
+
+.card-rakhi{
+  width:130px;
+  margin-bottom:15px;
+}
+
+.card-front h3{
+  font-family:"DM Serif Display",serif;
+  font-size:2rem;
+  font-weight:400;
+}
+
+.card-front small{
+  color:var(--gold2);
+  margin-top:18px;
+}
+
+.card-back .heart{
+  font-size:2.5rem;
+}
+
+.card-back p{
+  font-family:Kalam,cursive;
+  font-size:1.25rem;
+  line-height:1.7;
+  margin:15px 0;
+}
+
+.signature{
+  font-family:"DM Serif Display",serif;
+  font-style:italic;
+}
+
+
+/* =========================
+   REASONS
+========================= */
+
+.reasons{
+  background:var(--pink);
+}
+
+.reason-grid{
+  width:min(1050px,100%);
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.reason{
+  background:var(--paper);
+  border:1px solid #d7af4b55;
+  border-radius:25px;
+  padding:30px 18px;
+  transition:.3s;
+  color:var(--red);
+}
+
+.reason:hover{
+  transform:translateY(-8px);
+  box-shadow:0 20px 40px #64152d1a;
+}
+
+.reason-icon{
+  font-size:2.5rem;
+  margin-bottom:10px;
+}
+
+.reason h3{
+  font-family:"DM Serif Display",serif;
+  font-size:1.35rem;
+  font-weight:400;
+}
+
+.reason p{
+  max-height:0;
+  overflow:hidden;
+  opacity:0;
+  margin-top:0;
+  transition:.4s;
+  font-family:Kalam,cursive;
+  line-height:1.6;
+}
+
+.reason.open p{
+  max-height:150px;
+  opacity:1;
+  margin-top:12px;
+}
+
+.reason-output{
+  margin:30px auto 0;
+  font-family:Kalam,cursive;
+  color:var(--red);
+  font-size:1.2rem;
+}
+
+
+/* =========================
+   MEMORIES
+========================= */
+
+.memories{
+  background:var(--paper);
+}
+
+.timeline{
+  width:min(800px,100%);
+  margin:auto;
+  position:relative;
+  text-align:left;
+}
+
+.timeline::before{
+  content:"";
+  position:absolute;
+  left:25px;
+  top:0;
+  bottom:0;
+  width:2px;
+  background:var(--gold);
+}
+
+.memory{
+  position:relative;
+  padding:15px 20px 35px 75px;
+}
+
+.memory-number{
+  position:absolute;
+  left:0;
+  top:5px;
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  background:var(--red);
+  color:var(--gold2);
+  display:grid;
+  place-items:center;
+  font-size:.7rem;
+  z-index:2;
+  border:3px solid var(--paper);
+}
+
+.memory h3{
+  font-family:"DM Serif Display",serif;
+  color:var(--red);
+  font-size:1.6rem;
+  font-weight:400;
+}
+
+.memory p{
+  margin-top:7px;
+  opacity:.7;
+  line-height:1.7;
+}
+
+
+/* =========================
+   QUIZ
+========================= */
+
+.quiz{
+  background:#f4dfb7;
+}
+
+.quiz-box{
+  width:min(720px,100%);
+  margin:auto;
+  background:var(--paper);
+  border-radius:30px;
+  padding:35px;
+  box-shadow:var(--shadow);
+}
+
+.question{
+  color:var(--red);
+  font-family:"DM Serif Display",serif;
+  font-size:1.5rem;
+  margin-bottom:25px;
+}
+
+.answers{
+  display:grid;
+  gap:10px;
+}
+
+.answer{
+  padding:14px;
+  border:1px solid #d7af4b88;
+  background:transparent;
+  color:var(--brown);
+  border-radius:15px;
+  transition:.25s;
+}
+
+.answer:hover{
+  background:#d7af4b22;
+}
+
+.answer.correct{
+  background:#b8e8c1;
+}
+
+.answer.wrong{
+  background:#f2b5b5;
+}
+
+.quiz-result{
+  min-height:30px;
+  margin:20px 0;
+  color:var(--red);
+  font-weight:600;
+}
+
+.next{
+  border:0;
+  background:var(--red);
+  color:white;
+  padding:11px 20px;
+  border-radius:30px;
+}
+
+
+/* =========================
+   SECRET
+========================= */
+
+.secret{
+  background:
+    radial-gradient(circle at center,#8d2445,var(--red3));
+  color:white;
+}
+
+.secret h2{
+  color:white;
+}
+
+.secret .eyebrow{
+  color:var(--gold2);
+}
+
+.unlock{
+  margin-top:25px;
+  padding:15px 25px;
+  border:1px solid var(--gold2);
+  border-radius:50px;
+  background:var(--gold2);
+  color:var(--red3);
+  font-weight:700;
+}
+
+.secret-message{
+  width:min(700px,100%);
+  max-height:0;
+  overflow:hidden;
+  opacity:0;
+  transition:1s;
+}
+
+.secret-message.show{
+  max-height:600px;
+  opacity:1;
+  margin-top:35px;
+}
+
+.secret-message-inner{
+  padding:35px;
+  border:1px solid var(--gold);
+  border-radius:25px;
+  background:#ffffff0b;
+}
+
+.secret-message-inner .big-heart{
+  font-size:3rem;
+}
+
+.secret-message-inner p{
+  font-family:Kalam,cursive;
+  font-size:1.3rem;
+  line-height:1.8;
+  color:#ffeecb;
+  margin:15px 0;
+}
+
+
+/* =========================
+   FINALE
+========================= */
+
+.final{
+  min-height:80vh;
+  background:var(--red3);
+  color:white;
+  overflow:hidden;
+}
+
+.final h2{
+  color:white;
+  font-size:clamp(2.8rem,8vw,6rem);
+}
+
+.final h2 span{
+  color:var(--gold2);
+  display:block;
+}
+
+.final-rakhi{
+  width:180px;
+  margin-bottom:20px;
+  animation:floatRakhi 4s infinite;
+}
+
+.final p{
+  color:#ffeac5;
+  font-family:Kalam,cursive;
+  font-size:1.3rem;
+  max-width:600px;
+  margin:auto;
+}
+
+.celebrate{
+  margin-top:30px;
+  padding:15px 25px;
+  border-radius:40px;
+  border:1px solid var(--gold2);
+  background:var(--gold2);
+  color:var(--red3);
+  font-weight:700;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  background:#230611;
+  color:#fff7;
+  text-align:center;
+  padding:35px 20px;
+  font-size:.75rem;
+}
+
+
+/* =========================
+   CONFETTI
+========================= */
+
+.confetti{
+  position:fixed;
+  z-index:9000;
+  pointer-events:none;
+  font-size:20px;
+  transition:
+    transform 1.3s cubic-bezier(.2,.8,.2,1),
+    opacity 1.3s;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:800px){
+
+  .story-box{
+    grid-template-columns:1fr;
+  }
+
+  .reason-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .game-board{
+    height:430px;
+  }
+
+  .wrist{
+    width:260px;
+  }
+
+}
+
+@media(max-width:550px){
+
+  .nav{
+    height:60px;
+    padding:0 4vw;
+  }
+
+  .logo{
+    font-size:.9rem;
+  }
+
+  .nav button{
+    padding:7px 10px;
+    font-size:.65rem;
+  }
+
+  .hero h1{
+    font-size:3.5rem;
+  }
+
+  .hero-sub{
+    font-size:1.05rem;
+  }
+
+  .section{
+    padding:80px 5vw;
+  }
+
+  .story-left,
+  .story-right{
+    padding:35px 25px;
+  }
+
+  .story-stats{
+    grid-template-columns:1fr;
+  }
+
+  .stat{
+    border-right:0;
+    border-bottom:1px solid #d7af4b55;
+  }
+
+  .reason-grid{
+    grid-template-columns:1fr;
+  }
+
+  .game-board{
+    height:400px;
+  }
+
+  .wrist{
+    width:230px;
+    height:105px;
+  }
+
+  .hand{
+    width:150px;
+  }
+
+  .drop{
+    width:130px;
+    height:130px;
+  }
+
+  .flip-card{
+    height:440px;
+  }
+
+  .card-back p{
+    font-size:1.1rem;
+  }
+
+  .quiz-box{
+    padding:25px 18px;
+  }
+
+}
+
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+
+@media(prefers-reduced-motion:reduce){
+
+  *,
+  *::before,
+  *::after{
+    animation:none!important;
+    transition:none!important;
+  }
+
+}
+</style>
 </head>
 
 <body>
 
-<canvas id="trailCanvas"></canvas>
-<div id="dot"></div>
-<div id="toast"></div>
+<div id="particles"></div>
+<div class="cursor" id="cursor"></div>
 
-<!-- Floating controls -->
-<button class="floating-btn" id="soundBtn">🔊</button>
-<button class="floating-btn second" id="themeBtn">🌙</button>
 
-<!-- Navigation -->
-<header class="topbar">
-  <div class="brand">SIS<span>♡</span>TER</div>
+<!-- ================= NAV ================= -->
 
-  <button id="shareBtn" class="outline-btn">
-    ↗ Share Surprise
-  </button>
-</header>
+<nav class="nav">
+
+  <div class="logo">
+    SIS<span>♡</span>TER
+  </div>
+
+  <div class="nav-actions">
+
+    <button onclick="sharePage()">
+      ↗ Share
+    </button>
+
+    <button onclick="scrollToSection('final')">
+      ❤️ Finale
+    </button>
+
+  </div>
+
+</nav>
 
 
 <!-- ================= HERO ================= -->
 
-<section id="hero">
+<header class="hero" id="home">
 
-  <div class="intro">
+  <div class="hero-center">
 
-    <p class="intro-loading show" id="introLoading">
-      ✨ something special is loading
-      <span class="dots">
-        <span>.</span>
-        <span>.</span>
-        <span>.</span>
-      </span>
+    <div class="pretitle">
+      A little surprise for someone special
+    </div>
+
+    <div class="hero-rakhi" id="heroRakhi"></div>
+
+    <h1>
+      Happy Raksha
+      <em>Bandhan, Sis.</em>
+    </h1>
+
+    <p class="hero-sub">
+      You may steal my things, annoy me,
+      argue with me and expose all my embarrassing
+      secrets — but you'll always have a brother
+      standing beside you.
     </p>
 
     <button
-      class="intro-gift"
-      id="introGift"
-      aria-label="Open your Raksha Bandhan surprise"
+      class="open-btn"
+      onclick="startSurprise()"
     >
-      <span>🎁</span>
-      <small>tap to open your surprise</small>
+      🎁 Open Your Surprise
     </button>
 
-    <div class="thread-half thread-left" id="threadLeft"></div>
-    <div class="thread-half thread-right" id="threadRight"></div>
-
-    <div class="intro-rakhi" id="introRakhi"></div>
-
-    <div class="intro-wrist" id="introWrist">
-      <div class="wrist-shape"></div>
-    </div>
-
-    <div class="intro-letter" id="introLetter">
-      <p class="letter-text">
-        For my sister — my forever teammate,
-        professional irritator, secret keeper
-        and one of the people I can never replace. ❤️
-      </p>
-    </div>
-
-    <div class="intro-finale" id="introFinale">
-
-      <span class="finale-heart">❤️</span>
-
-      <p class="finale-title">
-        Happy Raksha Bandhan, Sis!
-      </p>
-
-      <p class="finale-hindi">
-        बहन हो तो ऐसी — थोड़ी नटखट, बहुत प्यारी।
-      </p>
-
-    </div>
-
-    <div class="intro-scrollcue" id="introScrollCue">
-      scroll to continue ↓
+    <div class="scroll">
+      ↓ scroll when you're ready
     </div>
 
   </div>
 
-</section>
+</header>
 
 
-<!-- ================= COUNTER ================= -->
+<!-- ================= STORY ================= -->
 
-<section class="counter-section">
+<section class="section story reveal">
 
-  <div class="counter-card">
+  <div class="eyebrow">
+    More than a thread
+  </div>
 
-    <span class="eyebrow">
-      A little reminder
-    </span>
+  <h2>
+    Some things never change.
+  </h2>
 
-    <h2>
-      Some things never change.
-    </h2>
+  <p class="section-desc">
+    We grow older. We change. Life gets busier.
+    But being siblings is one thing neither time
+    nor distance gets to rewrite.
+  </p>
 
-    <div class="counter-grid">
+  <div class="story-box">
 
-      <div>
-        <strong>∞</strong>
-        <span>days of being siblings</span>
-      </div>
+    <div class="story-left">
 
-      <div>
-        <strong>1</strong>
-        <span>unbreakable bond</span>
-      </div>
+      <h3>
+        To my sister ❤️
+      </h3>
 
-      <div>
-        <strong>∞</strong>
-        <span>inside jokes</span>
+      <p>
+        From childhood fights to random laughs,
+        from stealing each other's stuff to
+        becoming each other's backup —
+        every chapter has made this bond
+        what it is today.
+      </p>
+
+    </div>
+
+    <div class="story-right">
+
+      <div class="story-stats">
+
+        <div class="stat">
+          <strong>∞</strong>
+          <span>memories</span>
+        </div>
+
+        <div class="stat">
+          <strong>1</strong>
+          <span>unbreakable bond</span>
+        </div>
+
+        <div class="stat">
+          <strong>∞</strong>
+          <span>inside jokes</span>
+        </div>
+
       </div>
 
     </div>
@@ -147,108 +1249,133 @@
 
 <!-- ================= RAKHI ================= -->
 
-<section id="showcase">
+<section class="section rakhi-section reveal">
 
-  <span class="eyebrow">
+  <div class="eyebrow">
     A thread with a story
-  </span>
-
-  <div class="rakhi-slot" id="showcaseRakhi"></div>
+  </div>
 
   <h2>
     Not just a Rakhi.
   </h2>
 
-  <p class="showcase-caption">
-    It's a tiny reminder that no matter how much we argue,
-    you will always have a brother in your corner.
+  <p class="section-desc">
+    Every thread carries a promise:
+    no matter how much we fight,
+    you're never facing life completely alone.
   </p>
+
+  <div class="rakhi-display">
+    <div
+      class="big-rakhi"
+      id="bigRakhi"
+    ></div>
+  </div>
+
+  <div class="rakhi-note">
+    "A tiny thread. A very big promise."
+  </div>
 
 </section>
 
 
-<!-- ================= DRAG RAKHI ================= -->
+<!-- ================= GAME ================= -->
 
-<section id="tie">
+<section class="section game reveal">
 
-  <span class="eyebrow">
-    Make it official
-  </span>
+  <div class="eyebrow">
+    Interactive surprise
+  </div>
 
-  <h2 class="tie-title">
-    Tie the Rakhi
+  <h2>
+    Tie the Rakhi 🪢
   </h2>
 
-  <p class="tie-sub">
+  <p class="section-desc">
     Drag the Rakhi onto the wrist.
-    Your surprise unlocks when you get it right.
+    Once you tie it, the next part unlocks.
   </p>
 
-  <div class="tie-stage" id="stage">
+  <div class="game-board" id="gameBoard">
 
-    <div class="wrist-wrap">
-      <div class="wrist-shape"></div>
+    <div class="game-title">
+      DRAG THE RAKHI → PLACE IT ON THE WRIST
     </div>
 
-    <div class="drop-zone" id="dropZone">
-      <span>place here</span>
+    <div class="hand"></div>
+
+    <div class="wrist"></div>
+
+    <div
+      class="drop"
+      id="drop"
+    >
+      place Rakhi here
     </div>
 
     <div
+      class="draggable"
       id="dragRakhi"
-      role="button"
-      aria-label="Drag Rakhi"
     ></div>
 
   </div>
 
-  <p class="hint" id="tieHint">
-    Every Rakhi begins with a little effort.
-  </p>
+  <div
+    class="game-message"
+    id="gameMessage"
+  >
+    Every Rakhi begins with a little effort. ❤️
+  </div>
 
 </section>
 
 
-<!-- ================= PERSONAL CARD ================= -->
+<!-- ================= CARD ================= -->
 
-<section id="card-section">
+<section class="section card-section reveal">
 
-  <span class="eyebrow">
+  <div class="eyebrow">
     Made only for her
-  </span>
+  </div>
 
-  <h2 class="card-title">
-    Your Personal Raksha Bandhan Card
+  <h2>
+    Your Personal Card
   </h2>
 
-  <p class="card-sub">
-    Put her name below, then open the card.
+  <p class="section-desc">
+    Type your sister's name and open her
+    personalized Raksha Bandhan card.
   </p>
 
-  <div class="name-input">
+  <div class="name-wrap">
 
-    <label for="nameField">
-      My sister's name
+    <label>
+      Her name
     </label>
 
     <input
-      type="text"
-      id="nameField"
+      class="name-input"
+      id="sisterName"
       placeholder="Type her name..."
-      maxlength="24"
-      autocomplete="off"
+      maxlength="30"
     >
 
   </div>
 
-  <div class="card-tools">
+  <div class="card-actions">
 
-    <button class="pill-btn" id="randomMsg">
-      ✨ Give me another message
+    <button
+      class="small-btn"
+      onclick="saveName()"
+    >
+      💾 Save Name
     </button>
 
-    <button class="pill-btn" id="saveCard">
-      💾 Save name
+    <button
+      class="small-btn"
+      onclick="changeMessage()"
+    >
+      ✨ Another Message
     </button>
 
   </div>
@@ -257,47 +1384,48 @@
   <div
     class="flip-card"
     id="flipCard"
-    tabindex="0"
-    role="button"
-    aria-label="Open your card"
+    onclick="flipCard()"
   >
 
     <div class="flip-inner">
 
-      <div class="face front">
+      <div class="card-face card-front">
 
-        <div class="card-ribbon">
+        <div class="card-label">
           FOR MY SISTER
         </div>
 
-        <div class="rakhi-mini" id="cardRakhi"></div>
+        <div
+          class="card-rakhi"
+          id="cardRakhi"
+        ></div>
 
-        <p id="frontGreeting">
-          Happy Raksha Bandhan
-        </p>
+        <h3 id="cardGreeting">
+          Happy Raksha Bandhan ❤️
+        </h3>
 
-        <div class="tap">
-          tap to open ♥
-        </div>
+        <small>
+          tap the card to open
+        </small>
 
       </div>
 
 
-      <div class="face back">
+      <div class="card-face card-back">
 
-        <div class="mini-heart">
-          ♥
+        <div class="heart">
+          ❤️
         </div>
 
-        <p class="msg" id="cardMsg">
+        <p id="cardMessage">
           Whatever fights we've had,
           whatever distance comes between us —
           you are still my sister,
           my family and someone I'll always stand beside.
         </p>
 
-        <div class="sign">
-          — from your annoying but loving brother
+        <div class="signature">
+          — your annoying but loving brother
         </div>
 
       </div>
@@ -311,70 +1439,129 @@
 
 <!-- ================= REASONS ================= -->
 
-<section id="reasons">
+<section class="section reasons reveal">
 
-  <span class="eyebrow">
-    Tap each card
-  </span>
+  <div class="eyebrow">
+    Tap them
+  </div>
 
   <h2>
     Why you're special
   </h2>
 
+  <p class="section-desc">
+    Six things I probably don't say often enough.
+  </p>
+
   <div class="reason-grid">
 
-    <button
-      class="reason"
-      data-text="Because you somehow know when something is wrong even when I say 'I'm fine.'"
-    >
-      💗
-      <span>You just know.</span>
+    <button class="reason">
+
+      <div class="reason-icon">
+        💗
+      </div>
+
+      <h3>
+        You just know.
+      </h3>
+
+      <p>
+        Somehow you can tell when something
+        is wrong even when I say I'm fine.
+      </p>
+
     </button>
 
-    <button
-      class="reason"
-      data-text="Because annoying me seems to be one of your favourite hobbies — and somehow I still love you."
-    >
-      😂
-      <span>Professional irritator.</span>
+
+    <button class="reason">
+
+      <div class="reason-icon">
+        😂
+      </div>
+
+      <h3>
+        Professional irritator.
+      </h3>
+
+      <p>
+        Annoying me seems to be one of
+        your most carefully developed talents.
+      </p>
+
     </button>
 
-    <button
-      class="reason"
-      data-text="Because family feels a little more like home when you're around."
-    >
-      🏠
-      <span>You feel like home.</span>
+
+    <button class="reason">
+
+      <div class="reason-icon">
+        🏠
+      </div>
+
+      <h3>
+        You feel like home.
+      </h3>
+
+      <p>
+        Family feels a little more like home
+        when you're around.
+      </p>
+
     </button>
 
-    <button
-      class="reason"
-      data-text="Because I can trust you with the things I don't say to everyone."
-    >
-      🔐
-      <span>My secret keeper.</span>
+
+    <button class="reason">
+
+      <div class="reason-icon">
+        🔐
+      </div>
+
+      <h3>
+        Secret keeper.
+      </h3>
+
+      <p>
+        I know there are things I can tell you
+        that I wouldn't tell everyone.
+      </p>
+
     </button>
 
-    <button
-      class="reason"
-      data-text="Because you've seen my worst moods and still haven't returned me to the shop."
-    >
-      😌
-      <span>Still stuck with me.</span>
+
+    <button class="reason">
+
+      <div class="reason-icon">
+        😌
+      </div>
+
+      <h3>
+        Still stuck with me.
+      </h3>
+
+      <p>
+        You've seen my worst moods and
+        somehow haven't returned me to the shop.
+      </p>
+
     </button>
 
-    <button
-      class="reason"
-      data-text="Because no matter how grown-up we become, you'll always be my little/big sister."
-    >
-      ♾️
-      <span>Forever family.</span>
+
+    <button class="reason">
+
+      <div class="reason-icon">
+        ♾️
+      </div>
+
+      <h3>
+        Forever family.
+      </h3>
+
+      <p>
+        Whatever happens next, you'll always
+        have a place in my life.
+      </p>
+
     </button>
 
-  </div>
-
-  <div class="reason-output" id="reasonOutput">
-    Tap a card 👆
   </div>
 
 </section>
@@ -382,79 +1569,94 @@
 
 <!-- ================= MEMORIES ================= -->
 
-<section id="memory">
+<section class="section memories reveal">
 
-  <span class="eyebrow">
-    Our little timeline
-  </span>
+  <div class="eyebrow">
+    Our timeline
+  </div>
 
   <h2>
     From then to always.
   </h2>
 
+  <p class="section-desc">
+    You can replace these with your real
+    childhood memories later.
+  </p>
+
+
   <div class="timeline">
 
-    <article>
-      <span>01</span>
+    <div class="memory">
 
-      <div>
-        <h3>
-          Childhood chaos
-        </h3>
-
-        <p>
-          Fights over tiny things.
-          Laughter over even tinier things.
-        </p>
+      <div class="memory-number">
+        01
       </div>
-    </article>
+
+      <h3>
+        Childhood chaos
+      </h3>
+
+      <p>
+        Fights over tiny things.
+        Laughing over even tinier things.
+      </p>
+
+    </div>
 
 
-    <article>
-      <span>02</span>
+    <div class="memory">
 
-      <div>
-        <h3>
-          The secret language
-        </h3>
-
-        <p>
-          One look, one expression —
-          somehow we understand.
-        </p>
+      <div class="memory-number">
+        02
       </div>
-    </article>
+
+      <h3>
+        The secret language
+      </h3>
+
+      <p>
+        One look, one expression —
+        somehow we understand.
+      </p>
+
+    </div>
 
 
-    <article>
-      <span>03</span>
+    <div class="memory">
 
-      <div>
-        <h3>
-          Growing up
-        </h3>
-
-        <p>
-          Life changes, but the sibling connection stays.
-        </p>
+      <div class="memory-number">
+        03
       </div>
-    </article>
+
+      <h3>
+        Growing up
+      </h3>
+
+      <p>
+        Life changes, responsibilities grow,
+        but the sibling connection remains.
+      </p>
+
+    </div>
 
 
-    <article>
-      <span>04</span>
+    <div class="memory">
 
-      <div>
-        <h3>
-          Always
-        </h3>
-
-        <p>
-          Different paths, same family,
-          same corner to come back to.
-        </p>
+      <div class="memory-number">
+        04
       </div>
-    </article>
+
+      <h3>
+        Always
+      </h3>
+
+      <p>
+        Different paths, same family,
+        same place to come back to.
+      </p>
+
+    </div>
 
   </div>
 
@@ -463,31 +1665,42 @@
 
 <!-- ================= QUIZ ================= -->
 
-<section id="quiz">
+<section class="section quiz reveal">
 
-  <span class="eyebrow">
+  <div class="eyebrow">
     Sibling test
-  </span>
+  </div>
 
   <h2>
-    How well do you know your brother? 😏
+    How well do you know me? 😏
   </h2>
 
-  <p class="quiz-sub">
-    Pick an answer. No cheating.
+  <p class="section-desc">
+    Let's see how well the sister knows her brother.
   </p>
 
-  <div class="quiz-card">
+  <div class="quiz-box">
 
-    <p class="question" id="question"></p>
+    <div
+      class="question"
+      id="question"
+    ></div>
 
-    <div class="answers" id="answers"></div>
+    <div
+      class="answers"
+      id="answers"
+    ></div>
 
-    <div class="quiz-result" id="quizResult"></div>
+    <div
+      class="quiz-result"
+      id="quizResult"
+    ></div>
 
     <button
-      class="pill-btn hidden"
-      id="nextQuestion"
+      class="next"
+      id="nextBtn"
+      style="display:none"
+      onclick="nextQuestion()"
     >
       Next →
     </button>
@@ -499,35 +1712,39 @@
 
 <!-- ================= SECRET ================= -->
 
-<section id="secret">
+<section class="section secret reveal">
 
-  <div class="secret-card">
+  <div class="eyebrow">
+    One last thing
+  </div>
 
-    <span class="eyebrow">
-      One last thing
-    </span>
+  <h2>
+    I kept one message hidden.
+  </h2>
 
-    <h2>
-      There is a secret message.
-    </h2>
+  <p class="section-desc" style="color:#ffeacb">
+    You have to unlock it yourself.
+  </p>
 
-    <p>
-      It only appears when you press the button.
-    </p>
+  <button
+    class="unlock"
+    onclick="unlockSecret()"
+    id="unlockButton"
+  >
+    🔐 Unlock My Message
+  </button>
 
-    <button
-      class="gold-btn"
-      id="secretBtn"
-    >
-      🔐 Unlock my message
-    </button>
 
-    <div
-      class="secret-message"
-      id="secretMessage"
-    >
+  <div
+    class="secret-message"
+    id="secretMessage"
+  >
 
-      <span>❤️</span>
+    <div class="secret-message-inner">
+
+      <div class="big-heart">
+        ❤️
+      </div>
 
       <p>
         No matter where life takes us,
@@ -552,1472 +1769,1118 @@
 
 <!-- ================= FINALE ================= -->
 
-<section id="finale">
+<section class="section final reveal" id="final">
 
-  <div id="giftLayer"></div>
+  <div
+    class="final-rakhi"
+    id="finalRakhi"
+  ></div>
 
-  <div class="finale-content">
-
-    <div
-      class="finale-rakhi"
-      id="finaleRakhi"
-    ></div>
-
-    <p
-      class="finale-text"
-      id="finaleText"
-    >
-      Happy Raksha Bandhan, Sister ❤️
-    </p>
-
-    <p class="finale-sub">
-      may this bond outlast every argument
-    </p>
-
-    <div class="final-actions">
-
-      <button
-        class="gold-btn"
-        id="confettiBtn"
-      >
-        🎉 Celebrate
-      </button>
-
-      <button
-        class="outline-btn light"
-        id="topBtn"
-      >
-        ↑ Back to top
-      </button>
-
-    </div>
-
+  <div class="eyebrow" style="color:var(--gold2)">
+    Forever
   </div>
+
+  <h2>
+    Happy Raksha
+    <span>Bandhan, Sis. ❤️</span>
+  </h2>
+
+  <p>
+    May this bond outlast every argument,
+    every distance and every phase of life.
+  </p>
+
+  <button
+    class="celebrate"
+    onclick="celebrate()"
+  >
+    🎉 Celebrate Our Bond
+  </button>
 
 </section>
 
 
 <footer>
-  made with love, memories & sibling chaos · 2026
+  Made with ❤️, memories & sibling chaos · 2026
 </footer>
 
 
 <script>
 
-/* =========================================
-   HELPERS
-========================================= */
-
-const $ = id => document.getElementById(id);
-
-
-/* =========================================
-   CURSOR TRAIL
-========================================= */
-
-const canvas = $("trailCanvas");
-const ctx = canvas.getContext("2d");
-const dot = $("dot");
-
-let W;
-let H;
-let points = [];
-
-function resize() {
-
-  W = canvas.width = innerWidth * devicePixelRatio;
-  H = canvas.height = innerHeight * devicePixelRatio;
-
-  canvas.style.width = innerWidth + "px";
-  canvas.style.height = innerHeight + "px";
-
-  ctx.setTransform(
-    devicePixelRatio,
-    0,
-    0,
-    devicePixelRatio,
-    0,
-    0
-  );
-
-  W = innerWidth;
-  H = innerHeight;
-}
-
-resize();
-
-addEventListener("resize", resize);
-
-
-if (matchMedia("(hover:hover)").matches) {
-
-  addEventListener("mousemove", e => {
-
-    dot.style.left = e.clientX + "px";
-    dot.style.top = e.clientY + "px";
-
-    points.push({
-      x: e.clientX,
-      y: e.clientY,
-      a: 1
-    });
-
-    if (points.length > 30) {
-      points.shift();
-    }
-
-  });
-
-}
-
-
-(function trail() {
-
-  ctx.clearRect(0, 0, W, H);
-
-  if (points.length > 1) {
-
-    ctx.beginPath();
-
-    ctx.moveTo(
-      points[0].x,
-      points[0].y
-    );
-
-    points.slice(1).forEach(p => {
-      ctx.lineTo(p.x, p.y);
-    });
-
-    ctx.strokeStyle =
-      "rgba(212,170,65,.45)";
-
-    ctx.lineWidth = 2;
-
-    ctx.stroke();
-  }
-
-  points.forEach(p => {
-    p.a -= .035;
-  });
-
-  points = points.filter(
-    p => p.a > 0
-  );
-
-  requestAnimationFrame(trail);
-
-})();
-
-
-/* =========================================
-   PARTICLES
-========================================= */
-
-function burst(
-  x,
-  y,
-  count = 28,
-  emojis = [
-    "🌸",
-    "✨",
-    "💛",
-    "❤️",
-    "🌼"
-  ]
-) {
-
-  for (
-    let i = 0;
-    i < count;
-    i++
-  ) {
-
-    const e =
-      document.createElement("div");
-
-    const a =
-      Math.random() *
-      Math.PI *
-      2;
-
-    const d =
-      60 +
-      Math.random() *
-      190;
-
-    e.textContent =
-      emojis[
-        i % emojis.length
-      ];
-
-    e.className =
-      "burst";
-
-    e.style.left =
-      x + "px";
-
-    e.style.top =
-      y + "px";
-
-    e.style.fontSize =
-      16 +
-      Math.random() * 16 +
-      "px";
-
-    document.body.appendChild(e);
-
-    requestAnimationFrame(() => {
-
-      e.style.transform =
-        `translate(
-          ${Math.cos(a) * d}px,
-          ${Math.sin(a) * d + 80}px
-        )
-        rotate(
-          ${Math.random() * 360}deg
-        )`;
-
-      e.style.opacity = 0;
-
-    });
-
-    setTimeout(
-      () => e.remove(),
-      1300
-    );
-
-  }
-
-}
-
-
-/* =========================================
-   TOAST
-========================================= */
-
-function toast(message) {
-
-  $("toast").textContent =
-    message;
-
-  $("toast").classList.add(
-    "show"
-  );
-
-  clearTimeout(window.toastTimer);
-
-  window.toastTimer =
-    setTimeout(
-      () =>
-        $("toast").classList.remove(
-          "show"
-        ),
-      2200
-    );
-
-}
-
-
-/* =========================================
+/* ==========================================
    RAKHI SVG
-========================================= */
+========================================== */
 
-function rakhiSVG() {
+function rakhiSVG(){
 
-  let petals = "";
-  let beads = "";
+  let petals="";
+  let beads="";
 
-  for (
-    let i = 0;
-    i < 8;
-    i++
-  ) {
+  for(let i=0;i<8;i++){
 
-    const angle =
-      i * 45;
+    let a=i*45;
 
-    petals += `
-      <path
-        transform="rotate(${angle} 100 100)"
-        d="
-          M100 100
-          Q114 67 100 38
-          Q86 67 100 100Z
-        "
-        fill="${
-          i % 2
-            ? "#d5ad45"
-            : "#8c1838"
-        }"
-        stroke="#5b0d22"
-        stroke-width="1.2"
+    petals+=`
+      <ellipse
+        cx="100"
+        cy="48"
+        rx="15"
+        ry="40"
+        transform="rotate(${a} 100 100)"
+        fill="${i%2===0?'#8d2445':'#d7af4b'}"
+        stroke="#6b132e"
+        stroke-width="2"
       />
     `;
+
   }
 
 
-  for (
-    let i = 0;
-    i < 28;
-    i++
-  ) {
+  for(let i=0;i<24;i++){
 
-    const angle =
-      i *
-      Math.PI *
-      2 /
-      28;
+    let a=i*Math.PI*2/24;
 
-    const cx =
-      100 +
-      Math.cos(angle) * 59;
+    let x=100+Math.cos(a)*58;
+    let y=100+Math.sin(a)*58;
 
-    const cy =
-      100 +
-      Math.sin(angle) * 59;
-
-    beads += `
+    beads+=`
       <circle
-        cx="${cx}"
-        cy="${cy}"
-        r="2.7"
-        fill="#f0cf69"
+        cx="${x}"
+        cy="${y}"
+        r="3"
+        fill="#f4d77c"
       />
     `;
+
   }
 
 
   return `
-    <svg
-      viewBox="0 0 200 240"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+  <svg
+    viewBox="0 0 200 260"
+    xmlns="http://www.w3.org/2000/svg"
+  >
 
-      <line
-        x1="100"
-        y1="0"
-        x2="100"
-        y2="40"
-        stroke="#d5ad45"
-        stroke-width="3"
-      />
+    <path
+      d="M100 0V42"
+      stroke="#d7af4b"
+      stroke-width="4"
+    />
 
-      <g>
-        ${petals}
-      </g>
+    ${petals}
 
-      <circle
-        cx="100"
-        cy="100"
-        r="34"
-        fill="#64102a"
-        stroke="#e4bf58"
-        stroke-width="2"
-      />
+    <circle
+      cx="100"
+      cy="100"
+      r="36"
+      fill="#64152d"
+      stroke="#f4d77c"
+      stroke-width="3"
+    />
 
-      <circle
-        cx="100"
-        cy="100"
-        r="20"
-        fill="#fff7e8"
-        stroke="#d5ad45"
-        stroke-width="1.5"
-      />
+    <circle
+      cx="100"
+      cy="100"
+      r="24"
+      fill="#fff8ea"
+      stroke="#d7af4b"
+      stroke-width="2"
+    />
 
-      <circle
-        cx="100"
-        cy="100"
-        r="9"
-        fill="#d5ad45"
-      />
+    <circle
+      cx="100"
+      cy="100"
+      r="10"
+      fill="#d7af4b"
+    />
 
-      <g>
-        ${beads}
-      </g>
+    ${beads}
 
-      <path
-        d="M82 155
-           Q68 190 48 208
-           M118 155
-           Q132 190 152 208"
-        stroke="#d5ad45"
-        stroke-width="3"
-        fill="none"
-        stroke-linecap="round"
-      />
+    <path
+      d="M80 140C72 175 50 200 35 220"
+      stroke="#d7af4b"
+      stroke-width="4"
+      fill="none"
+      stroke-linecap="round"
+    />
 
-      <circle
-        cx="47"
-        cy="209"
-        r="4"
-        fill="#8c1838"
-      />
+    <path
+      d="M120 140C128 175 150 200 165 220"
+      stroke="#d7af4b"
+      stroke-width="4"
+      fill="none"
+      stroke-linecap="round"
+    />
 
-      <circle
-        cx="153"
-        cy="209"
-        r="4"
-        fill="#d5ad45"
-      />
+    <circle
+      cx="35"
+      cy="220"
+      r="5"
+      fill="#8d2445"
+    />
 
-    </svg>
+    <circle
+      cx="165"
+      cy="220"
+      r="5"
+      fill="#8d2445"
+    />
+
+  </svg>
   `;
 
 }
 
 
 [
-  "showcaseRakhi",
+  "heroRakhi",
+  "bigRakhi",
   "dragRakhi",
   "cardRakhi",
-  "introRakhi",
-  "finaleRakhi"
-].forEach(id => {
+  "finalRakhi"
+].forEach(id=>{
+  document.getElementById(id).innerHTML=rakhiSVG();
+});
 
-  $(id).innerHTML =
-    rakhiSVG();
+
+/* ==========================================
+   PERSONAL NAME
+========================================== */
+
+const nameInput=
+document.getElementById("sisterName");
+
+const savedName=
+localStorage.getItem("sisterName");
+
+if(savedName){
+
+  nameInput.value=savedName;
+
+  updateName(savedName);
+
+}
+
+
+nameInput.addEventListener("input",e=>{
+  updateName(e.target.value.trim());
+});
+
+
+function updateName(name){
+
+  const greeting=
+  document.getElementById("cardGreeting");
+
+  greeting.textContent=
+    name
+    ? `Happy Raksha Bandhan, ${name} ❤️`
+    : "Happy Raksha Bandhan ❤️";
+
+}
+
+
+function saveName(){
+
+  const name=
+  nameInput.value.trim();
+
+  if(!name){
+
+    alert("Enter your sister's name first ❤️");
+
+    return;
+  }
+
+  localStorage.setItem(
+    "sisterName",
+    name
+  );
+
+  showToast(
+    "Her name has been saved ❤️"
+  );
+
+}
+
+
+/* ==========================================
+   CARD
+========================================== */
+
+let flipped=false;
+
+function flipCard(){
+
+  flipped=!flipped;
+
+  document
+    .getElementById("flipCard")
+    .classList.toggle(
+      "flipped",
+      flipped
+    );
+
+}
+
+
+const messages=[
+
+  "Whatever fights we've had, whatever distance comes between us — you are still my sister, my family and someone I'll always stand beside.",
+
+  "You annoy me more than almost anyone — which is exactly why life would feel strange without you.",
+
+  "No matter how grown-up we become, you'll always have a brother who has your back.",
+
+  "If life ever feels too heavy, remember that you don't have to carry everything alone.",
+
+  "We may argue about absolutely ridiculous things, but I would still choose you as my sister every single time."
+
+];
+
+let messageIndex=0;
+
+function changeMessage(){
+
+  messageIndex=
+    (messageIndex+1)%messages.length;
+
+  document.getElementById(
+    "cardMessage"
+  ).textContent=
+    messages[messageIndex];
+
+}
+
+
+/* ==========================================
+   REASONS
+========================================== */
+
+document
+.querySelectorAll(".reason")
+.forEach(card=>{
+
+  card.addEventListener("click",()=>{
+
+    card.classList.toggle("open");
+
+    if(card.classList.contains("open")){
+
+      burst(
+        window.innerWidth/2,
+        window.innerHeight/2,
+        8
+      );
+
+    }
+
+  });
 
 });
 
 
-/* =========================================
-   INTRO ANIMATION
-========================================= */
+/* ==========================================
+   DRAG RAKHI GAME
+========================================== */
 
-function openIntro() {
+const board=
+document.getElementById("gameBoard");
 
-  $("introGift").disabled =
-    true;
+const drag=
+document.getElementById("dragRakhi");
 
-  const rect =
-    $("introGift").getBoundingClientRect();
+const drop=
+document.getElementById("drop");
 
-  burst(
-    rect.left +
-    rect.width / 2,
+const gameMessage=
+document.getElementById("gameMessage");
 
-    rect.top +
-    rect.height / 2,
-
-    24
-  );
-
-  $("introGift")
-    .classList.remove("show");
+let dragging=false;
+let offsetX=0;
+let offsetY=0;
+let completed=false;
 
 
-  setTimeout(
-    () =>
-      $("threadLeft")
-        .classList.add("show"),
-    350
-  );
+function resetDrag(){
+
+  drag.style.left=
+    "50%";
+
+  drag.style.top=
+    "65px";
+
+  drag.style.transform=
+    "translateX(-50%)";
+
+}
+
+resetDrag();
 
 
-  setTimeout(
-    () =>
-      $("threadRight")
-        .classList.add("show"),
-    350
-  );
+drag.addEventListener(
+  "pointerdown",
+  e=>{
 
+    if(completed)return;
 
-  setTimeout(
-    () =>
-      $("introRakhi")
-        .classList.add("show"),
-    900
-  );
+    dragging=true;
 
-
-  setTimeout(
-    () =>
-      $("introWrist")
-        .classList.add("show"),
-    1700
-  );
-
-
-  setTimeout(
-    () =>
-      $("introRakhi")
-        .classList.add("settled"),
-    1800
-  );
-
-
-  setTimeout(
-    () =>
-      $("introLetter")
-        .classList.add("show"),
-    2450
-  );
-
-
-  setTimeout(() => {
-
-    $("introLetter")
-      .classList.remove("show");
-
-    $("introWrist")
-      .classList.remove("show");
-
-    $("introRakhi")
-      .classList.remove("show");
-
-    $("introFinale")
-      .classList.add("show");
-
-    burst(
-      innerWidth / 2,
-      innerHeight / 2,
-      30
+    drag.setPointerCapture(
+      e.pointerId
     );
 
-  }, 3900);
+    const r=
+      drag.getBoundingClientRect();
 
+    offsetX=
+      e.clientX-r.left;
 
-  setTimeout(
-    () =>
-      $("introScrollCue")
-        .classList.add("show"),
-    4700
-  );
+    offsetY=
+      e.clientY-r.top;
 
-}
+    drag.classList.add(
+      "dragging"
+    );
 
-
-setTimeout(() => {
-
-  $("introLoading")
-    .classList.remove("show");
-
-  setTimeout(
-    () =>
-      $("introGift")
-        .classList.add("show"),
-    300
-  );
-
-}, 1300);
-
-
-$("introGift")
-  .addEventListener(
-    "click",
-    openIntro
-  );
-
-
-/* =========================================
-   DRAG RAKHI
-========================================= */
-
-let dragging = false;
-let tied = false;
-let ox = 0;
-let oy = 0;
-
-
-function initDrag() {
-
-  const stage =
-    $("stage").getBoundingClientRect();
-
-  $("dragRakhi").style.left =
-    stage.width / 2 - 55 + "px";
-
-  $("dragRakhi").style.top =
-    "20px";
-
-  $("dropZone").style.left =
-    stage.width / 2 - 70 + "px";
-
-  $("dropZone").style.top =
-    stage.height / 2 - 70 + "px";
-
-}
-
-
-addEventListener(
-  "load",
-  initDrag
-);
-
-addEventListener(
-  "resize",
-  initDrag
+  }
 );
 
 
-$("dragRakhi")
-  .addEventListener(
-    "pointerdown",
-    e => {
+drag.addEventListener(
+  "pointermove",
+  e=>{
 
-      if (tied) return;
+    if(!dragging)return;
 
-      dragging = true;
+    const b=
+      board.getBoundingClientRect();
 
-      $("dragRakhi")
-        .setPointerCapture(
-          e.pointerId
-        );
+    drag.style.left=
+      `${e.clientX-b.left-offsetX}px`;
 
-      const rect =
-        $("dragRakhi")
-          .getBoundingClientRect();
+    drag.style.top=
+      `${e.clientY-b.top-offsetY}px`;
 
-      ox =
-        e.clientX -
-        rect.left;
+    drag.style.transform=
+      "none";
 
-      oy =
-        e.clientY -
-        rect.top;
+    const d=
+      drag.getBoundingClientRect();
 
-      $("dragRakhi")
-        .classList.add(
-          "dragging"
-        );
+    const z=
+      drop.getBoundingClientRect();
 
-    }
-  );
+    const dx=
+      d.left+d.width/2-
+      (z.left+z.width/2);
 
+    const dy=
+      d.top+d.height/2-
+      (z.top+z.height/2);
 
-$("dragRakhi")
-  .addEventListener(
-    "pointermove",
-    e => {
+    const distance=
+      Math.sqrt(dx*dx+dy*dy);
 
-      if (!dragging) return;
+    drop.classList.toggle(
+      "active",
+      distance<130
+    );
 
-      const stage =
-        $("stage")
-          .getBoundingClientRect();
-
-      $("dragRakhi").style.left =
-        e.clientX -
-        stage.left -
-        ox +
-        "px";
-
-      $("dragRakhi").style.top =
-        e.clientY -
-        stage.top -
-        oy +
-        "px";
-
-    }
-  );
+  }
+);
 
 
-$("dragRakhi")
-  .addEventListener(
-    "pointerup",
-    () => {
+drag.addEventListener(
+  "pointerup",
+  e=>{
 
-      if (!dragging) return;
+    if(!dragging)return;
 
-      dragging = false;
+    dragging=false;
 
-      $("dragRakhi")
-        .classList.remove(
-          "dragging"
-        );
+    drag.classList.remove(
+      "dragging"
+    );
 
-      const a =
-        $("dragRakhi")
-          .getBoundingClientRect();
+    const d=
+      drag.getBoundingClientRect();
 
-      const b =
-        $("dropZone")
-          .getBoundingClientRect();
+    const z=
+      drop.getBoundingClientRect();
 
-      const distance =
-        Math.hypot(
-          a.left +
-          a.width / 2 -
-          (b.left +
-           b.width / 2),
+    const dx=
+      d.left+d.width/2-
+      (z.left+z.width/2);
 
-          a.top +
-          a.height / 2 -
-          (b.top +
-           b.height / 2)
-        );
+    const dy=
+      d.top+d.height/2-
+      (z.top+z.height/2);
+
+    const distance=
+      Math.sqrt(dx*dx+dy*dy);
 
 
-      if (
-        distance < 85 &&
-        !tied
-      ) {
+    if(distance<110){
 
-        tied = true;
+      completed=true;
 
-        $("dragRakhi")
-          .classList.add(
-            "tied"
-          );
+      drop.style.opacity="0";
 
-        $("dropZone")
-          .classList.add(
-            "hidden"
-          );
+      drag.style.left=
+        `${board.clientWidth/2-62}px`;
 
-        $("tieHint").textContent =
-          "Tied! The sister bond is officially activated. ❤️";
+      drag.style.top=
+        `${board.clientHeight/2-62}px`;
 
-        $("tieHint")
-          .classList.add(
-            "done"
-          );
+      drag.style.transform=
+        "scale(1)";
 
-        burst(
-          innerWidth / 2,
-          innerHeight / 2
-        );
+      gameMessage.textContent=
+        "Rakhi tied! ❤️ The sister bond is officially activated.";
 
-        setTimeout(
-          () =>
-            $("card-section")
-              .scrollIntoView({
-                behavior:
-                  "smooth"
-              }),
-          800
-        );
+      burst(
+        window.innerWidth/2,
+        window.innerHeight/2,
+        35
+      );
 
-      }
+      setTimeout(()=>{
+
+        document
+          .querySelector(".card-section")
+          .scrollIntoView({
+            behavior:"smooth"
+          });
+
+      },900);
 
     }
-  );
+
+    else{
+
+      resetDrag();
+
+    }
+
+  }
+);
 
 
-/* =========================================
-   PERSONAL CARD
-========================================= */
+/* ==========================================
+   QUIZ
+========================================== */
 
-const messages = [
+const quiz=[
 
-  "Whatever fights we have, you are still my sister, my family and someone I will always stand beside.",
+  {
+    q:"Who is more likely to start an argument over something tiny?",
+    a:["Sister 😇","Brother 😇","Both 😂"],
+    correct:2
+  },
 
-  "You annoy me more than almost anyone — which is exactly why life would feel strange without you.",
+  {
+    q:"Who usually gets the last word?",
+    a:["Sister","Brother","Nobody wins"],
+    correct:0
+  },
 
-  "No matter how much we grow up, some part of me will always be the brother who has your back.",
+  {
+    q:"If your brother says 'I didn't touch it', what probably happened?",
+    a:["He touched it","He definitely touched it 😂","Mystery"],
+    correct:1
+  },
 
-  "If you ever doubt how loved you are, come back to this page. I meant every word."
+  {
+    q:"What is stronger than a sibling argument?",
+    a:["Silence","The sibling bond ❤️","Nothing"],
+    correct:1
+  }
 
 ];
 
+let questionIndex=0;
+let score=0;
 
-let msgIndex = 0;
+function renderQuiz(){
 
+  const q=
+    quiz[questionIndex];
 
-const saved =
-  localStorage.getItem(
-    "rakhiSisterName"
-  );
+  document.getElementById(
+    "question"
+  ).textContent=q.q;
 
-
-if (saved) {
-
-  $("nameField").value =
-    saved;
-
-  $("frontGreeting")
-    .textContent =
-      "Happy Raksha Bandhan, " +
-      saved +
-      " ❤️";
-
-}
-
-
-$("nameField")
-  .addEventListener(
-    "input",
-    e => {
-
-      const name =
-        e.target.value.trim();
-
-      $("frontGreeting")
-        .textContent =
-          name
-            ? `Happy Raksha Bandhan, ${name} ❤️`
-            : "Happy Raksha Bandhan";
-
-    }
-  );
-
-
-$("saveCard")
-  .onclick = () => {
-
-    localStorage.setItem(
-      "rakhiSisterName",
-      $("nameField")
-        .value
-        .trim()
+  const answers=
+    document.getElementById(
+      "answers"
     );
 
-    toast(
-      "Name saved on this device 💾"
-    );
+  answers.innerHTML="";
 
-  };
+  document.getElementById(
+    "quizResult"
+  ).textContent="";
 
-
-$("randomMsg")
-  .onclick = () => {
-
-    msgIndex =
-      (msgIndex + 1) %
-      messages.length;
-
-    updateMsg();
-
-  };
+  document.getElementById(
+    "nextBtn"
+  ).style.display="none";
 
 
-function updateMsg() {
+  q.a.forEach((text,index)=>{
 
-  const name =
-    $("nameField")
-      .value
-      .trim();
+    const btn=
+      document.createElement("button");
 
-  $("cardMsg")
-    .textContent =
-      (
-        name
-          ? name + ", "
-          : ""
-      ) +
-      messages[msgIndex];
+    btn.className="answer";
 
-}
+    btn.textContent=text;
 
+    btn.onclick=()=>{
 
-$("flipCard")
-  .onclick = () => {
+      [...answers.children]
+      .forEach(b=>b.disabled=true);
 
-    $("flipCard")
-      .classList.toggle(
-        "flipped"
-      );
+      if(index===q.correct){
 
-    updateMsg();
+        btn.classList.add("correct");
 
-  };
+        score++;
 
+        document.getElementById(
+          "quizResult"
+        ).textContent=
+          "Correct! You know the sibling chaos. 😎";
 
-$("flipCard")
-  .onkeydown = e => {
+      }
 
-    if (
-      e.key === "Enter" ||
-      e.key === " "
-    ) {
+      else{
 
-      e.preventDefault();
+        btn.classList.add("wrong");
 
-      $("flipCard").click();
+        answers
+          .children[q.correct]
+          .classList.add("correct");
 
-    }
+        document.getElementById(
+          "quizResult"
+        ).textContent=
+          "Wrong! The sibling court has ruled. 😂";
 
-  };
+      }
 
-
-/* =========================================
-   SPECIAL REASONS
-========================================= */
-
-document
-  .querySelectorAll(".reason")
-  .forEach(button => {
-
-    button.onclick = () => {
-
-      $("reasonOutput")
-        .textContent =
-          button.dataset.text;
-
-      burst(
-        innerWidth / 2,
-        innerHeight / 2,
-        8,
-        [
-          "💗",
-          "✨"
-        ]
-      );
+      document.getElementById(
+        "nextBtn"
+      ).style.display="inline-block";
 
     };
 
+    answers.appendChild(btn);
+
   });
 
-
-/* =========================================
-   QUIZ
-========================================= */
-
-const questions = [
-
-  {
-    q:
-      "Who is more likely to start an argument over something tiny?",
-
-    a:
-      [
-        "Sister 😇",
-        "Brother 😇",
-        "Both 😂"
-      ],
-
-    correct: 2
-  },
+}
 
 
-  {
-    q:
-      "Who usually gets the last word?",
+function nextQuestion(){
 
-    a:
-      [
-        "Sister",
-        "Brother",
-        "Nobody wins"
-      ],
+  if(
+    questionIndex<
+    quiz.length-1
+  ){
 
-    correct: 0
-  },
+    questionIndex++;
 
+    renderQuiz();
 
-  {
-    q:
-      "If your brother says “I didn’t touch it”, what does it probably mean?",
-
-    a:
-      [
-        "He touched it",
-        "He touched it 😂",
-        "Both are lying"
-      ],
-
-    correct: 1
   }
 
-];
+  else{
+
+    document.getElementById(
+      "question"
+    ).textContent=
+      `Final Score: ${score}/${quiz.length} ❤️`;
+
+    document.getElementById(
+      "answers"
+    ).innerHTML="";
+
+    document.getElementById(
+      "quizResult"
+    ).textContent=
+      score===quiz.length
+      ? "Perfect score. Certified sibling expert. 🏆"
+      : "Good enough. You're still family. 😂";
+
+    document.getElementById(
+      "nextBtn"
+    ).style.display="none";
+
+  }
+
+}
+
+renderQuiz();
 
 
-let qi = 0;
-let score = 0;
+/* ==========================================
+   SECRET
+========================================== */
 
+function unlockSecret(){
 
-function renderQ() {
+  document
+    .getElementById(
+      "secretMessage"
+    )
+    .classList.add("show");
 
-  const q =
-    questions[qi];
+  document.getElementById(
+    "unlockButton"
+  ).textContent=
+    "❤️ Message Unlocked";
 
-  $("question")
-    .textContent =
-      q.q;
-
-  $("answers")
-    .innerHTML = "";
-
-  $("quizResult")
-    .textContent = "";
-
-  $("nextQuestion")
-    .classList.add(
-      "hidden"
-    );
-
-
-  q.a.forEach(
-    (answer, index) => {
-
-      const button =
-        document.createElement(
-          "button"
-        );
-
-      button.textContent =
-        answer;
-
-      button.onclick =
-        () =>
-          answerQuestion(
-            index
-          );
-
-      $("answers")
-        .appendChild(
-          button
-        );
-
-    }
+  burst(
+    window.innerWidth/2,
+    window.innerHeight/2,
+    40
   );
 
 }
 
 
-function answerQuestion(index) {
+/* ==========================================
+   SHARE
+========================================== */
 
-  const q =
-    questions[qi];
+async function sharePage(){
 
-  const correct =
-    index === q.correct;
+  const name=
+    nameInput.value.trim();
 
-  if (correct) {
-    score++;
-  }
+  const url=
+    new URL(window.location.href);
 
+  if(name){
 
-  $("quizResult")
-    .textContent =
-      correct
-        ? "Correct! You know the chaos. 😎"
-        : "Wrong! The sibling court has ruled against you. 😂";
-
-
-  $("answers")
-    .querySelectorAll("button")
-    .forEach(
-      button =>
-        button.disabled = true
+    url.searchParams.set(
+      "sister",
+      name
     );
-
-
-  $("nextQuestion")
-    .classList.remove(
-      "hidden"
-    );
-
-
-  if (
-    qi ===
-    questions.length - 1
-  ) {
-
-    $("nextQuestion")
-      .textContent =
-        "See my result →";
 
   }
 
-}
+  const text=
+    `A Raksha Bandhan surprise for ${name||"my sister"} ❤️`;
 
+  try{
 
-$("nextQuestion")
-  .onclick = () => {
+    if(navigator.share){
 
-    if (
-      qi <
-      questions.length - 1
-    ) {
-
-      qi++;
-
-      renderQ();
+      await navigator.share({
+        title:"For My Sister ❤️",
+        text,
+        url:url.href
+      });
 
     }
 
-    else {
+    else{
 
-      $("question")
-        .textContent =
-          `You scored ${score}/${questions.length} ❤️`;
-
-      $("answers")
-        .innerHTML = "";
-
-      $("quizResult")
-        .textContent =
-          score === questions.length
-            ? "Perfect. Certified sibling expert."
-            : "Good enough. You're still family. 😂";
-
-      $("nextQuestion")
-        .classList.add(
-          "hidden"
-        );
-
-    }
-
-  };
-
-
-renderQ();
-
-
-/* =========================================
-   SECRET MESSAGE
-========================================= */
-
-$("secretBtn")
-  .onclick = () => {
-
-    $("secretMessage")
-      .classList.add(
-        "show"
+      await navigator.clipboard.writeText(
+        url.href
       );
 
-    $("secretBtn")
-      .textContent =
-        "❤️ Message unlocked";
+      showToast(
+        "Personalized link copied 🔗"
+      );
 
-    burst(
-      innerWidth / 2,
-      innerHeight / 2,
-      35,
-      [
-        "❤️",
-        "✨",
-        "🌸"
-      ]
-    );
+    }
 
-  };
-
-
-/* =========================================
-   FINALE FLOATING GIFTS
-========================================= */
-
-const gifts = [
-  "🎁",
-  "🌸",
-  "✨",
-  "🪔",
-  "💛",
-  "❤️"
-];
-
-
-for (
-  let i = 0;
-  i < 18;
-  i++
-) {
-
-  const gift =
-    document.createElement(
-      "div"
-    );
-
-  gift.className =
-    "gift";
-
-  gift.textContent =
-    gifts[
-      i % gifts.length
-    ];
-
-  gift.style.left =
-    Math.random() * 95 +
-    "%";
-
-  gift.style.setProperty(
-    "--drift",
-    Math.random() * 90 -
-    45 +
-    "px"
-  );
-
-  gift.style.animationDuration =
-    7 +
-    Math.random() * 7 +
-    "s";
-
-  gift.style.animationDelay =
-    Math.random() * 8 +
-    "s";
-
-  $("giftLayer")
-    .appendChild(
-      gift
-    );
+  }catch(e){}
 
 }
 
 
-/* =========================================
-   CELEBRATE
-========================================= */
+/* ==========================================
+   URL NAME
+========================================== */
 
-$("confettiBtn")
-  .onclick = () => {
+const params=
+new URLSearchParams(
+  window.location.search
+);
 
-    burst(
-      innerWidth / 2,
-      innerHeight / 2,
-      65,
-      [
-        "🎉",
+const urlName=
+params.get("sister");
+
+if(urlName){
+
+  nameInput.value=urlName;
+
+  updateName(urlName);
+
+}
+
+
+/* ==========================================
+   CELEBRATION
+========================================== */
+
+function celebrate(){
+
+  for(let i=0;i<90;i++){
+
+    setTimeout(()=>{
+
+      const emojis=[
         "❤️",
-        "✨",
         "🌸",
+        "✨",
+        "🎉",
+        "🎁",
         "💛",
-        "🎁"
-      ]
+        "🪔"
+      ];
+
+      const el=
+        document.createElement("div");
+
+      el.className="confetti";
+
+      el.textContent=
+        emojis[
+          Math.floor(
+            Math.random()*emojis.length
+          )
+        ];
+
+      el.style.left=
+        window.innerWidth/2+"px";
+
+      el.style.top=
+        window.innerHeight*.45+"px";
+
+      document.body.appendChild(el);
+
+      requestAnimationFrame(()=>{
+
+        const angle=
+          Math.random()*Math.PI*2;
+
+        const distance=
+          80+Math.random()*400;
+
+        el.style.transform=
+          `translate(
+            ${Math.cos(angle)*distance}px,
+            ${Math.sin(angle)*distance+180}px
+          )
+          rotate(${Math.random()*720}deg)
+          scale(${.7+Math.random()})`;
+
+        el.style.opacity="0";
+
+      });
+
+      setTimeout(
+        ()=>el.remove(),
+        1500
+      );
+
+    },i*12);
+
+  }
+
+}
+
+
+/* ==========================================
+   PARTICLES
+========================================== */
+
+function floatingParticles(){
+
+  const container=
+    document.getElementById(
+      "particles"
     );
 
-  };
+  const symbols=[
+    "✦",
+    "✧",
+    "•",
+    "♡",
+    "✿"
+  ];
+
+  for(let i=0;i<35;i++){
+
+    const p=
+      document.createElement("div");
+
+    p.textContent=
+      symbols[
+        Math.floor(
+          Math.random()*symbols.length
+        )
+      ];
+
+    p.style.position="absolute";
+
+    p.style.left=
+      Math.random()*100+"vw";
+
+    p.style.top=
+      Math.random()*100+"vh";
+
+    p.style.color=
+      Math.random()>.5
+      ? "#d7af4b"
+      : "#8d2445";
+
+    p.style.opacity=
+      .15+Math.random()*.35;
+
+    p.style.fontSize=
+      8+Math.random()*16+"px";
+
+    p.style.animation=
+      `particleFloat ${5+Math.random()*8}s infinite ease-in-out`;
+
+    p.style.animationDelay=
+      Math.random()*5+"s";
+
+    container.appendChild(p);
+
+  }
+
+}
 
 
-/* =========================================
-   TOP
-========================================= */
+const style=
+document.createElement("style");
 
-$("topBtn")
-  .onclick = () => {
+style.textContent=`
 
-    scrollTo({
-      top: 0,
-      behavior: "smooth"
+@keyframes particleFloat{
+
+  0%,100%{
+    transform:translateY(0) rotate(0deg);
+  }
+
+  50%{
+    transform:
+      translateY(-35px)
+      rotate(180deg);
+  }
+
+}`;
+
+document.head.appendChild(style);
+
+floatingParticles();
+
+
+/* ==========================================
+   CURSOR
+========================================== */
+
+const cursor=
+document.getElementById("cursor");
+
+document.addEventListener(
+  "mousemove",
+  e=>{
+
+    cursor.style.left=
+      e.clientX+"px";
+
+    cursor.style.top=
+      e.clientY+"px";
+
+  }
+);
+
+
+/* ==========================================
+   SCROLL REVEAL
+========================================== */
+
+const observer=
+new IntersectionObserver(
+  entries=>{
+
+    entries.forEach(entry=>{
+
+      if(entry.isIntersecting){
+
+        entry.target
+          .classList.add(
+            "visible"
+          );
+
+      }
+
     });
 
-  };
-
-
-/* =========================================
-   SHARE
-========================================= */
-
-$("shareBtn")
-  .onclick = async () => {
-
-    const name =
-      $("nameField")
-        .value
-        .trim();
-
-    const url =
-      new URL(
-        location.href
-      );
-
-    if (name) {
-
-      url.searchParams.set(
-        "sister",
-        name
-      );
-
-    }
-
-
-    const text =
-      `A Raksha Bandhan surprise for ${
-        name ||
-        "my sister"
-      } ❤️`;
-
-
-    try {
-
-      if (
-        navigator.share
-      ) {
-
-        await navigator.share({
-          title:
-            "For My Sister ❤️",
-
-          text,
-
-          url:
-            url.href
-        });
-
-      }
-
-      else {
-
-        await navigator
-          .clipboard
-          .writeText(
-            url.href
-          );
-
-        toast(
-          "Surprise link copied! 🔗"
-        );
-
-      }
-
-    }
-
-    catch (error) {}
-
-  };
-
-
-/* =========================================
-   URL PERSONALIZATION
-========================================= */
-
-const params =
-  new URLSearchParams(
-    location.search
-  );
-
-
-if (
-  params.get("sister")
-) {
-
-  const sister =
-    params.get("sister");
-
-  $("nameField")
-    .value =
-      sister;
-
-  $("frontGreeting")
-    .textContent =
-      "Happy Raksha Bandhan, " +
-      sister +
-      " ❤️";
-
-}
-
-
-/* =========================================
-   DARK MODE
-========================================= */
-
-$("themeBtn")
-  .onclick = () => {
-
-    document.body
-      .classList.toggle(
-        "dark"
-      );
-
-    $("themeBtn")
-      .textContent =
-        document.body
-          .classList.contains(
-            "dark"
-          )
-          ? "☀️"
-          : "🌙";
-
-  };
-
-
-/* =========================================
-   SOUND MODE
-========================================= */
-
-let audioCtx;
-let playing = false;
-
-
-$("soundBtn")
-  .onclick = () => {
-
-    try {
-
-      if (!audioCtx) {
-
-        audioCtx =
-          new (
-            window.AudioContext ||
-            window.webkitAudioContext
-          )();
-
-      }
-
-
-      if (playing) {
-
-        audioCtx.suspend();
-
-        playing = false;
-
-        $("soundBtn")
-          .textContent =
-            "🔇";
-
-        return;
-
-      }
-
-
-      audioCtx.resume();
-
-      playing = true;
-
-      $("soundBtn")
-        .textContent =
-          "🔊";
-
-      toast(
-        "Celebration mode on ✨"
-      );
-
-    }
-
-    catch (error) {
-
-      toast(
-        "Sound is not available in this browser"
-      );
-
-    }
-
-  };
-
-
-/* =========================================
-   SCROLL REVEAL
-========================================= */
-
-const observer =
-  new IntersectionObserver(
-    entries => {
-
-      entries.forEach(
-        entry => {
-
-          if (
-            entry.isIntersecting
-          ) {
-
-            entry.target
-              .classList.add(
-                "visible"
-              );
-
-          }
-
-        }
-      );
-
-    },
-    {
-      threshold: 0.12
-    }
-  );
+  },
+  {
+    threshold:.12
+  }
+);
 
 
 document
-  .querySelectorAll(
-    "section:not(#hero), .timeline article, .reason, .counter-card"
-  )
-  .forEach(
-    element =>
-      observer.observe(
-        element
-      )
+.querySelectorAll(".reveal")
+.forEach(el=>
+  observer.observe(el)
+);
+
+
+/* ==========================================
+   START SURPRISE
+========================================== */
+
+function startSurprise(){
+
+  burst(
+    window.innerWidth/2,
+    window.innerHeight*.45,
+    35
   );
+
+  document
+    .querySelector(".story")
+    .scrollIntoView({
+      behavior:"smooth"
+    });
+
+}
+
+
+/* ==========================================
+   SCROLL
+========================================== */
+
+function scrollToSection(id){
+
+  document
+    .getElementById(id)
+    .scrollIntoView({
+      behavior:"smooth"
+    });
+
+}
+
+
+/* ==========================================
+   TOAST
+========================================== */
+
+let toastTimer;
+
+function showToast(text){
+
+  let t=
+    document.getElementById("toast");
+
+  if(!t){
+
+    t=
+      document.createElement("div");
+
+    t.id="toast";
+
+    t.style.position="fixed";
+    t.style.left="50%";
+    t.style.bottom="25px";
+    t.style.transform="translateX(-50%)";
+    t.style.padding="13px 20px";
+    t.style.background="#64152d";
+    t.style.color="white";
+    t.style.borderRadius="40px";
+    t.style.zIndex="10000";
+    t.style.boxShadow="0 15px 40px #0004";
+
+    document.body.appendChild(t);
+
+  }
+
+  t.textContent=text;
+
+  clearTimeout(toastTimer);
+
+  toastTimer=
+    setTimeout(
+      ()=>t.remove(),
+      2500
+    );
+
+}
+
+
+/* ==========================================
+   BURST
+========================================== */
+
+function burst(x,y,count=25){
+
+  const symbols=[
+    "❤️",
+    "✨",
+    "🌸",
+    "💛",
+    "🎉"
+  ];
+
+  for(let i=0;i<count;i++){
+
+    const e=
+      document.createElement("div");
+
+    e.className="confetti";
+
+    e.textContent=
+      symbols[
+        Math.floor(
+          Math.random()*symbols.length
+        )
+      ];
+
+    e.style.left=x+"px";
+    e.style.top=y+"px";
+
+    document.body.appendChild(e);
+
+    const angle=
+      Math.random()*Math.PI*2;
+
+    const distance=
+      60+Math.random()*230;
+
+    requestAnimationFrame(()=>{
+
+      e.style.transform=
+        `translate(
+          ${Math.cos(angle)*distance}px,
+          ${Math.sin(angle)*distance}px
+        )
+        rotate(${Math.random()*360}deg)`;
+
+      e.style.opacity="0";
+
+    });
+
+    setTimeout(
+      ()=>e.remove(),
+      1300
+    );
+
+  }
+
+}
 
 </script>
 
